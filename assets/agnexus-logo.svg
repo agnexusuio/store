@@ -1,0 +1,18 @@
+<svg width="320" height="72" viewBox="0 0 320 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="72" height="72" rx="22" fill="url(#paint0_linear)"/>
+  <path d="M18 49L31.5 20H40.8L54 49H45.1L42.6 43H29.2L26.6 49H18ZM32 36.8H39.9L36 27.3L32 36.8Z" fill="white"/>
+  <path d="M87 48V24H96.6L112.2 39.2V24H120.1V48H110.6L94.8 32.6V48H87Z" fill="#113C67"/>
+  <path d="M128.5 48V24H153.8V30.5H136.5V33.4H152.7V39.2H136.5V41.5H154.2V48H128.5Z" fill="#113C67"/>
+  <path d="M158.9 48V24H167L173 33.1L179.1 24H187.3L177.3 38.6L187.8 48H178.2L173 43.1L167.8 48H158.9Z" fill="#113C67"/>
+  <path d="M191.9 48V24H216V30.8H199.9V33.5H214.5V39.2H199.9V48H191.9Z" fill="#113C67"/>
+  <path d="M220.2 48V24H228.2V41.2H243.7V48H220.2Z" fill="#113C67"/>
+  <path d="M247.2 48V24H255.2V48H247.2Z" fill="#113C67"/>
+  <path d="M260.6 48V24H285.9V30.5H268.6V33.4H284.8V39.2H268.6V41.5H286.3V48H260.6Z" fill="#113C67"/>
+  <path d="M290.9 48V24H299L305 33.1L311.1 24H319.3L309.3 38.6L319.8 48H310.2L305 43.1L299.8 48H290.9Z" fill="#113C67"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="10.5" y1="8" x2="63.5" y2="64.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F81C9"/>
+      <stop offset="1" stop-color="#133C67"/>
+    </linearGradient>
+  </defs>
+</svg>
