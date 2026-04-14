@@ -142,13 +142,34 @@ def normalize_processor_family(processor: str) -> str:
     return "Otros"
 
 
-def extract_display(segment: str) -> str:
-    match = re.search(r"(\d{1,2}(?:[.,]\d)?)\s*(?:\"|”|pulgadas|inch|inches)", segment, flags=re.I)
-    if match:
-        return f'{match.group(1).replace(",", ".")}"'
-    # Fallback to any display-like number near the end of the title
+def normalize_display_value(value: str) -> str:
+    return f'{value.replace(",", ".").strip()}"'
+
+
+def extract_display_from_text(text: str) -> str | None:
+    match = re.search(r"(\d{1,2}(?:[.,]\d)?)\s*(?:\"|”|pulgadas|inch|inches)\b", text, flags=re.I)
+    return normalize_display_value(match.group(1)) if match else None
+
+
+def extract_display(segment: str, fallback_text: str | None = None) -> str:
+    """Extrae y verifica el tamaño de pantalla, priorizando unidades explícitas."""
+    segment = normalize_space(segment)
+    display = extract_display_from_text(segment)
+    if display:
+        return display
+    if fallback_text:
+        fallback_text = normalize_space(fallback_text)
+        display = extract_display_from_text(fallback_text)
+        if display:
+            return display
     match = re.search(r"(\d{1,2}(?:[.,]\d)?)\s*$", segment)
-    return f'{match.group(1).replace(",", ".")}"' if match else '15.6"'
+    if match:
+        return normalize_display_value(match.group(1))
+    if fallback_text:
+        match = re.search(r"(\d{1,2}(?:[.,]\d)?)\s*$", fallback_text)
+        if match:
+            return normalize_display_value(match.group(1))
+    return '15.6"'
 
 
 def extract_storage(segment: str) -> str:
@@ -276,7 +297,7 @@ def build_product(item: dict, index: int) -> dict:
         processor = clean_processor(parts[1])
         ram = extract_ram(parts[2] if len(parts) > 2 else raw_title)
         storage = extract_storage(parts[3] if len(parts) > 3 else raw_title)
-        display = extract_display(parts[4] if len(parts) > 4 else raw_title)
+        display = extract_display(parts[4] if len(parts) > 4 else raw_title, raw_title)
     else:
         brand, model = clean_model(raw_title)
         processor = clean_processor(raw_title)
