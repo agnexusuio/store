@@ -5,6 +5,8 @@ import json
 import math
 import re
 import shutil
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -26,20 +28,41 @@ DIGITALPC_URL_TEMPLATE = "https://digitalpcecuador.com/categoria-producto/laptop
 DIGITALPC_FIRST_PAGE = "https://digitalpcecuador.com/categoria-producto/laptops/?orderby=price"
 
 
-def fetch_text(url: str) -> str:
+def fetch_text(url: str, retries: int = 3) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return response.read().decode("utf-8", errors="ignore")
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return response.read().decode("utf-8", errors="ignore")
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429 and attempt < retries - 1:
+                time.sleep(5 * (attempt + 1))
+                continue
+            raise
+        except Exception:
+            if attempt < retries - 1:
+                time.sleep(2 * (attempt + 1))
+                continue
+            raise
 
 
-def download_file(url: str, target: Path) -> bool:
+def download_file(url: str, target: Path, retries: int = 2) -> bool:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(request, timeout=45) as response, target.open("wb") as fh:
-            shutil.copyfileobj(response, fh)
-        return target.exists() and target.stat().st_size > 0
-    except Exception:
-        return False
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(request, timeout=45) as response, target.open("wb") as fh:
+                shutil.copyfileobj(response, fh)
+            return target.exists() and target.stat().st_size > 0
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429 and attempt < retries - 1:
+                time.sleep(3 * (attempt + 1))
+                continue
+            return False
+        except Exception:
+            if attempt < retries - 1:
+                time.sleep(2 * (attempt + 1))
+                continue
+            return False
 
 
 def normalize_space(value: str) -> str:
@@ -335,16 +358,28 @@ def main() -> None:
 
     pinsoft_products = []
     for url in PINSOFT_URLS:
-        pinsoft_products.extend(parse_pinsoft_listing(fetch_text(url)))
+        try:
+            pinsoft_products.extend(parse_pinsoft_listing(fetch_text(url)))
+        except Exception as exc:
+            print(f"Advertencia: no se pudo obtener datos de Pinsoft desde {url}: {exc}")
     pinsoft_products = sorted(pinsoft_products, key=lambda item: item["price"])[:20]
 
     digital_products = []
-    first = parse_digital_listing(fetch_text(DIGITALPC_FIRST_PAGE))
-    digital_products.extend(first)
+    try:
+        first = parse_digital_listing(fetch_text(DIGITALPC_FIRST_PAGE))
+        digital_products.extend(first)
+    except Exception as exc:
+        print(f"Advertencia: no se pudo obtener datos de DigitalPC desde la página principal: {exc}")
+        first = []
+
     page = 2
     while len(digital_products) < 20:
         url = DIGITALPC_URL_TEMPLATE.format(page=page)
-        items = parse_digital_listing(fetch_text(url))
+        try:
+            items = parse_digital_listing(fetch_text(url))
+        except Exception as exc:
+            print(f"Advertencia: no se pudo obtener datos de DigitalPC desde {url}: {exc}")
+            break
         if not items:
             break
         digital_products.extend(items)
