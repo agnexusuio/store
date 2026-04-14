@@ -15,6 +15,7 @@ JSON_PATH = ROOT / "products.json"
 JS_PATH = ROOT / "products.js"
 
 USER_AGENT = "Mozilla/5.0 (compatible; AGNEXUSCatalogBot/1.0)"
+BRANDS = ["Asus", "Lenovo", "HP", "ACER", "MSI", "DELL", "ENV"]
 
 PINSOFT_URLS = [
     "https://pinsoft.ec/laptop-notebook-portatiles/c-67.html",
@@ -142,7 +143,11 @@ def normalize_processor_family(processor: str) -> str:
 
 
 def extract_display(segment: str) -> str:
-    match = re.search(r"(\d{1,2}(?:[.,]\d)?)", segment)
+    match = re.search(r"(\d{1,2}(?:[.,]\d)?)\s*(?:\"|”|pulgadas|inch|inches)", segment, flags=re.I)
+    if match:
+        return f'{match.group(1).replace(",", ".")}"'
+    # Fallback to any display-like number near the end of the title
+    match = re.search(r"(\d{1,2}(?:[.,]\d)?)\s*$", segment)
     return f'{match.group(1).replace(",", ".")}"' if match else '15.6"'
 
 
@@ -180,7 +185,10 @@ def clean_processor(segment: str) -> str:
     }
     for old, new in replacements.items():
         segment = segment.replace(old, new)
-    match = re.search(r"(Intel\s+Celeron\s+N\d+|Intel\s+N100|Intel\s+Core\s+[iI]\d[-\w]+|AMD\s+Ryzen\s+\d\s+[-\w]+)", segment)
+    match = re.search(
+        r"(Intel\s+Celeron\s+N\d+|Intel\s+N100|Intel\s+Core\s+[iI]\d[-\w]*|AMD\s+Ryzen\s+\d+\s*[-\w]*|Ryzen\s+\d+\s*[-\w]*)",
+        segment,
+    )
     if match:
         return match.group(1).replace("AMD ", "").replace("Intel ", "Intel ")
     return segment.split(",")[0].strip()
@@ -188,19 +196,24 @@ def clean_processor(segment: str) -> str:
 
 def clean_model(segment: str) -> tuple[str, str]:
     segment = normalize_space(segment)
-    segment = re.sub(r"^Cod[^A-Z0-9]+", "", segment, flags=re.I)
-    segment = re.sub(r"^Cod[^ ]*\s*", "", segment, flags=re.I)
+    segment = re.sub(r"^(Unknown|AGNEXUS)\b[\s\-:]*", "", segment, flags=re.I)
+    segment = re.sub(r"^[A-Z]{1,3}:\s*\d+\s*", "", segment)
+    segment = re.sub(r"^\d+\s*", "", segment)
+    segment = re.sub(r"^Cod(?:igo)?[^ ]*\s*", "", segment, flags=re.I)
     segment = re.sub(r"^(Laptop|Laptopt/Tablet|Kit)\s+", "", segment, flags=re.I)
-    brands = ["Asus", "Lenovo", "HP", "ACER", "MSI", "DELL", "ENV"]
-    brand = next((item for item in brands if segment.upper().startswith(item.upper())), None)
-    if brand:
-        model = segment[len(brand):].strip()
-        model = re.sub(r"^(Laptop|Kit)\s+", "", model, flags=re.I)
-        model = model.replace("(E1504F)", "E1504F").replace("VIVOBOOK", "VivoBook").replace("IDEAPAD", "IdeaPad").replace("INSPIRON", "Inspiron").strip(" /")
-    else:
-        # If no brand found, assume it's AGNEXUS or something, but force to have a brand? For now, set to unknown
-        brand = "Unknown"
-        model = segment
+
+    brand = next((item for item in BRANDS if re.search(rf"\b{re.escape(item)}\b", segment, flags=re.I)), None)
+    if not brand and re.search(r"\bENV\b", segment, flags=re.I):
+        brand = "ENV"
+    if not brand:
+        brand = "ENV"
+
+    match = re.search(rf"(?i)\b{re.escape(brand)}\b(.*)", segment)
+    model = match.group(1).strip() if match else segment
+    model = re.sub(r"^(Laptop|Kit)\s+", "", model, flags=re.I)
+    model = re.split(r"(?i)\b(?:Intel|AMD|Ryzen|Celeron|N100|Core|RTX|[0-9]+GB|1TB|TB|SSD|HDD|RAM|TOUCH|W11|W10|WINDOWS|FHD|HD|IPS)\b", model)[0].strip()
+    model = model.replace("(E1504F)", "E1504F").replace("VIVOBOOK", "VivoBook").replace("IDEAPAD", "IdeaPad").replace("INSPIRON", "Inspiron")
+    model = re.sub(r"\s+", " ", model).strip(" /")
     return brand, model
 
 
@@ -256,13 +269,24 @@ def build_description(processor_family: str, raw_title: str) -> str:
 
 
 def build_product(item: dict, index: int) -> dict:
-    parts = [normalize_space(part) for part in item["title"].split("/") if normalize_space(part)]
-    brand, model = clean_model(parts[0])
-    processor = clean_processor(parts[1] if len(parts) > 1 else "")
+    raw_title = item["title"]
+    parts = [normalize_space(part) for part in raw_title.split("/") if normalize_space(part)]
+    if len(parts) > 1:
+        brand, model = clean_model(parts[0])
+        processor = clean_processor(parts[1])
+        ram = extract_ram(parts[2] if len(parts) > 2 else raw_title)
+        storage = extract_storage(parts[3] if len(parts) > 3 else raw_title)
+        display = extract_display(parts[4] if len(parts) > 4 else raw_title)
+    else:
+        brand, model = clean_model(raw_title)
+        processor = clean_processor(raw_title)
+        if not processor:
+            image_name = Path(item["image"]).name.replace("-", " ").replace("_", " ")
+            processor = clean_processor(image_name)
+        ram = extract_ram(raw_title)
+        storage = extract_storage(raw_title)
+        display = extract_display(raw_title)
     processor_family = normalize_processor_family(processor)
-    ram = extract_ram(parts[2] if len(parts) > 2 else "")
-    storage = extract_storage(parts[3] if len(parts) > 3 else "")
-    display = extract_display(parts[4] if len(parts) > 4 else "")
     title = f"{brand} {model} {processor} {ram} {storage} {display}".replace("  ", " ").strip()
     price = math.ceil((item["price"] + (90 if item["source"] == "pinsoft" else 70)) / 10) * 10
     return {
