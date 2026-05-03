@@ -42,13 +42,23 @@ function createCard(product) {
   const description = fragment.querySelector(".product-description");
   const whatsapp = fragment.querySelector(".product-whatsapp");
 
-  image.src = product.image || PLACEHOLDER_IMAGE;
+  // Garantizar que siempre haya una imagen válida
+  const imageUrl = product.image || PLACEHOLDER_IMAGE;
+  image.src = imageUrl;
   image.alt = product.title;
+
+  // Fallback si la imagen principal falla
   image.addEventListener("error", () => {
     if (!image.src.endsWith(PLACEHOLDER_IMAGE)) {
+      console.warn(`Imagen no disponible para ${product.title}, usando placeholder`);
       image.src = PLACEHOLDER_IMAGE;
     }
   }, { once: true });
+
+  // Fallback adicional: si el src está vacío
+  if (!imageUrl || imageUrl.trim() === "") {
+    image.src = PLACEHOLDER_IMAGE;
+  }
 
   processor.textContent = product.processorFamily;
   title.textContent = product.title;

@@ -46,23 +46,35 @@ def fetch_text(url: str, retries: int = 3) -> str:
             raise
 
 
-def download_file(url: str, target: Path, retries: int = 2) -> bool:
+def download_file(url: str, target: Path, retries: int = 3) -> bool:
+    """Descarga un archivo con reintentos y validación de tamaño."""
+    if not url or url.strip() == "":
+        return False
+    
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     for attempt in range(retries):
         try:
-            with urllib.request.urlopen(request, timeout=45) as response, target.open("wb") as fh:
-                shutil.copyfileobj(response, fh)
-            return target.exists() and target.stat().st_size > 0
+            with urllib.request.urlopen(request, timeout=45) as response:
+                content = response.read()
+                # Validar que no sea una página de error o muy pequeña
+                if len(content) < 5000:
+                    if attempt < retries - 1:
+                        time.sleep(2 * (attempt + 1))
+                    continue
+                target.write_bytes(content)
+            return target.exists() and target.stat().st_size > 5000
         except urllib.error.HTTPError as exc:
             if exc.code == 429 and attempt < retries - 1:
-                time.sleep(3 * (attempt + 1))
+                time.sleep(5 * (attempt + 1))
                 continue
-            return False
-        except Exception:
             if attempt < retries - 1:
                 time.sleep(2 * (attempt + 1))
-                continue
-            return False
+            continue
+        except Exception as exc:
+            if attempt < retries - 1:
+                time.sleep(2 * (attempt + 1))
+            continue
+    return False
 
 
 def normalize_space(value: str) -> str:
@@ -142,6 +154,30 @@ def digital_large_image(product_url: str, fallback: str) -> str:
     if match:
         return match.group(1)
     return fallback
+
+
+def search_alternative_image(brand: str, model: str) -> str | None:
+    """Intenta descargar imagen de fuente alternativa usando búsqueda."""
+    search_term = f"{brand} {model} laptop".replace(" ", "+")
+    # Usar DuckDuckGo como alternativa más amigable que Google
+    urls = [
+        f"https://duckduckgo.com/?q={search_term}+laptop&ia=images&iax=images",
+        f"https://www.bing.com/images/search?q={search_term}",
+    ]
+    
+    for url in urls:
+        try:
+            page = fetch_text(url, retries=2)
+            # Intentar extraer URL de imagen de la página
+            if "duckduckgo" in url:
+                match = re.search(r'"url":\s*"(https?://[^"]+\.(jpg|png|jpeg))"', page, re.I)
+            else:
+                match = re.search(r'murl="([^"]*)"', page)
+            if match:
+                return match.group(1)
+        except Exception:
+            continue
+    return None
 
 
 def normalize_processor_family(processor: str) -> str:
@@ -388,6 +424,8 @@ def main() -> None:
 
     catalog = []
     files_to_keep = set()
+    download_stats = {"success": 0, "fallback": 0, "alternative": 0, "failed": 0}
+    
     for index, item in enumerate(pinsoft_products + digital_products, start=1):
         product = build_product(item, index)
         image_name = filename_for(item, index)
@@ -395,24 +433,72 @@ def main() -> None:
         product["image"] = f"assets/products/{image_name}"
         files_to_keep.add(image_name)
 
+        # Estrategia de descarga con múltiples intentos y fallbacks
+        downloaded = False
+        brand, model = clean_model(product["title"])
+        
+        # Intento 1: Imagen grande de la fuente original
         best_image = (
             pinsoft_large_image(item["url"], item["image"])
             if item["source"] == "pinsoft"
             else digital_large_image(item["url"], item["image"])
         )
-        if not download_file(best_image, image_path):
-            if not image_path.exists():
-                fallback = item["image"].replace("/150x150/", "/510x510/") if item["source"] == "pinsoft" else item["image"]
-                download_file(fallback, image_path)
-
+        if download_file(best_image, image_path):
+            download_stats["success"] += 1
+            print(f"✓ {index}: {product['title'][:50]} (desde {item['source']})")
+            downloaded = True
+        
+        # Intento 2: URL de imagen pequeña con mejor resolución
+        if not downloaded:
+            if item["source"] == "pinsoft":
+                fallback = item["image"].replace("/150x150/", "/510x510/")
+            else:
+                fallback = item["image"]
+            
+            if fallback != best_image and download_file(fallback, image_path):
+                download_stats["fallback"] += 1
+                print(f"⚠ {index}: {product['title'][:50]} (fallback de resolución)")
+                downloaded = True
+        
+        # Intento 3: Buscar imagen alternativa en otras fuentes
+        if not downloaded:
+            alt_image = search_alternative_image(brand, model)
+            if alt_image and download_file(alt_image, image_path):
+                download_stats["alternative"] += 1
+                print(f"🔄 {index}: {product['title'][:50]} (imagen alternativa)")
+                downloaded = True
+        
+        # Intento 4: URL original de thumbnail (último recurso)
+        if not downloaded and download_file(item["image"], image_path):
+            download_stats["fallback"] += 1
+            print(f"⚠ {index}: {product['title'][:50]} (thumbnail original)")
+            downloaded = True
+        
+        # Si todo falla, registrarlo pero continuar (el frontend usa placeholder)
+        if not downloaded:
+            download_stats["failed"] += 1
+            print(f"✗ {index}: {product['title'][:50]} (sin imagen, usará placeholder)")
+        
         catalog.append(product)
 
+    # Limpiar imágenes viejas
     for existing in ASSETS_DIR.glob("*"):
         if existing.is_file() and existing.name not in files_to_keep:
             existing.unlink()
 
+    # Guardar catálogo
     JSON_PATH.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     JS_PATH.write_text("window.AGNEXUS_PRODUCTS = " + json.dumps(catalog, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
+    
+    # Resumen de descargas
+    total = sum(download_stats.values())
+    print(f"\n{'='*60}")
+    print(f"📊 Resumen de descargas:")
+    print(f"  ✓ Éxito directo: {download_stats['success']}/{total}")
+    print(f"  ⚠ Fallback resolución: {download_stats['fallback']}/{total}")
+    print(f"  🔄 Imagen alternativa: {download_stats['alternative']}/{total}")
+    print(f"  ✗ Sin imagen: {download_stats['failed']}/{total}")
+    print(f"{'='*60}")
 
 
 if __name__ == "__main__":
