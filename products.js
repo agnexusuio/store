@@ -157,19 +157,6 @@ window.AGNEXUS_PRODUCTS = [
   },
   {
     "id": "agn-013",
-    "title": "Asus VivoBook 15 M1502YA Ryzen 7 5825U 8GB RAM 512GB SSD 15.6\"",
-    "processor": "Ryzen 7 5825U",
-    "processorFamily": "Ryzen 7",
-    "ram": "8GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Ryzen 7 5825U · 15.6\" · Chip Ryzen 7",
-    "description": "Excelente para productividad exigente con una configuración actual y muy competitiva.",
-    "price": 630,
-    "image": "assets/products/13-cod-1805-asus-vivobook-15-m1502ya-amd-ryzen-7-5825u-8-n-cleos-16-subproc.png"
-  },
-  {
-    "id": "agn-014",
     "title": "Asus VivoBook 15 X1504V Intel Core 5 120U Última Generación 8GB RAM 512GB SSD 15.6\"",
     "processor": "Intel Core 5 120U Última Generación",
     "processorFamily": "Otros",
@@ -179,7 +166,20 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Intel Core 5 120U Última Generación · 15.6\" · Perfil productivo · Lector de huellas",
     "description": "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.",
     "price": 640,
-    "image": "assets/products/14-cod-1797-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
+    "image": "assets/products/13-cod-1797-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
+  },
+  {
+    "id": "agn-014",
+    "title": "Lenovo V15 G5 IRL Intel Core i5-13420H 8GB RAM 512GB SSD 15.6\"",
+    "processor": "Intel Core i5-13420H",
+    "processorFamily": "Core i5",
+    "ram": "8GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · Intel Core i5-13420H · 15.6\" · Perfil productivo",
+    "description": "Sube de nivel con un rendimiento más sólido para oficina, estudio y multitarea real.",
+    "price": 650,
+    "image": "assets/products/14-cod-1793-lenovo-v15-g5-irl-intel-core-i5-13420h-13va-gen-8gb-ddr5-512gb.png"
   },
   {
     "id": "agn-015",
@@ -191,37 +191,11 @@ window.AGNEXUS_PRODUCTS = [
     "display": "15.6\"",
     "secondary": "Windows 11 · Intel Core i5-1334U · 15.6\" · Panel Full HD 120Hz",
     "description": "Sube de nivel con un rendimiento más sólido para oficina, estudio y multitarea real.",
-    "price": 640,
+    "price": 660,
     "image": "assets/products/15-cod-1802-dell-15-dc15250-intel-core-i5-1334u-13-gen-8gb-512gb-nvme-ssd-1.png"
   },
   {
     "id": "agn-016",
-    "title": "Lenovo V15 G5 IRL Intel Core i5-13420H 8GB RAM 512GB SSD 15.6\"",
-    "processor": "Intel Core i5-13420H",
-    "processorFamily": "Core i5",
-    "ram": "8GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Intel Core i5-13420H · 15.6\" · Perfil productivo",
-    "description": "Sube de nivel con un rendimiento más sólido para oficina, estudio y multitarea real.",
-    "price": 650,
-    "image": "assets/products/16-cod-1793-lenovo-v15-g5-irl-intel-core-i5-13420h-13va-gen-8gb-ddr5-512gb.png"
-  },
-  {
-    "id": "agn-017",
-    "title": "Asus VivoBook Go 15 E1504F Ryzen 5 7520U 16GB RAM 512GB SSD 15.6\"",
-    "processor": "Ryzen 5 7520U",
-    "processorFamily": "Ryzen 5",
-    "ram": "16GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Ryzen 5 7520U · 15.6\" · Perfil productivo · Lector de huellas",
-    "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
-    "price": 660,
-    "image": "assets/products/17-cod-as-1809-kit-asus-vivobook-go-15-e1504f-amd-ryzen-5-7520u-16-gb-lpddr.png"
-  },
-  {
-    "id": "agn-018",
     "title": "Asus VivoBook 15 X1504V Intel Core 5 120U Última Generación 12GB RAM 512GB SSD 15.6\"",
     "processor": "Intel Core 5 120U Última Generación",
     "processorFamily": "Otros",
@@ -231,10 +205,10 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Intel Core 5 120U Última Generación · 15.6\" · Perfil productivo · Lector de huellas",
     "description": "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.",
     "price": 670,
-    "image": "assets/products/18-cod-1798-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
+    "image": "assets/products/16-cod-1798-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
   },
   {
-    "id": "agn-019",
+    "id": "agn-017",
     "title": "Asus VivoBook 15 X1504V Intel Core 5 120U Última Generación 16GB RAM 512GB SSD 15.6\"",
     "processor": "Intel Core 5 120U Última Generación",
     "processorFamily": "Otros",
@@ -244,11 +218,37 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Intel Core 5 120U Última Generación · 15.6\" · 16GB RAM · Lector de huellas",
     "description": "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.",
     "price": 670,
-    "image": "assets/products/19-cod-1817-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
+    "image": "assets/products/17-cod-1817-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
+  },
+  {
+    "id": "agn-018",
+    "title": "Asus VivoBook 15 M1502YA Ryzen 7 5825U 8GB RAM 512GB SSD 15.6\"",
+    "processor": "Ryzen 7 5825U",
+    "processorFamily": "Ryzen 7",
+    "ram": "8GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · Ryzen 7 5825U · 15.6\" · Chip Ryzen 7",
+    "description": "Excelente para productividad exigente con una configuración actual y muy competitiva.",
+    "price": 670,
+    "image": "assets/products/18-cod-1805-asus-vivobook-15-m1502ya-amd-ryzen-7-5825u-8-n-cleos-16-subproc.png"
+  },
+  {
+    "id": "agn-019",
+    "title": "HP 250R G10 Intel Core 5 120U Nueva Generación 16GB RAM 512GB SSD 15.6\"",
+    "processor": "Intel Core 5 120U Nueva Generación",
+    "processorFamily": "Otros",
+    "ram": "16GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · Intel Core 5 120U Nueva Generación · 15.6\" · 16GB RAM",
+    "description": "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.",
+    "price": 680,
+    "image": "assets/products/19-cod-1796-laptop-hp-250r-g10-intel-core-5-120u-serie-1-nueva-generaci-n-1.png"
   },
   {
     "id": "agn-020",
-    "title": "HP 255 G10 Ryzen 7 7730U 16GB RAM 512GB SSD 15.6\"",
+    "title": "Lenovo V15 G4 ABP Ryzen 7 7730U 16GB RAM 512GB SSD 15.6\"",
     "processor": "Ryzen 7 7730U",
     "processorFamily": "Ryzen 7",
     "ram": "16GB RAM",
@@ -256,7 +256,7 @@ window.AGNEXUS_PRODUCTS = [
     "display": "15.6\"",
     "secondary": "Windows 11 · Ryzen 7 7730U · 15.6\" · 16GB RAM",
     "description": "Excelente para productividad exigente con una configuración actual y muy competitiva.",
-    "price": 680,
-    "image": "assets/products/20-cod-1792-hp-255-g10-amd-ryzen-7-7730u-up-4-5-ghz-16-mb-cach-l3-8-n-cleos.png"
+    "price": 690,
+    "image": "assets/products/20-cod-1804-lenovo-v15-g4-abp-amd-ryzen-7-7730u-16gb-512-gb-m-2-pcie-4-0x4.png"
   }
 ];
