@@ -1,4 +1,4 @@
-﻿const PRODUCTS = Array.isArray(window.AGNEXUS_PRODUCTS) ? window.AGNEXUS_PRODUCTS : [];
+const PRODUCTS = Array.isArray(window.AGNEXUS_PRODUCTS) ? window.AGNEXUS_PRODUCTS : [];
 const WHATSAPP_NUMBER = "593992217314";
 const PLACEHOLDER_IMAGE = "assets/laptop-placeholder.svg";
 const PROJECTOR_PLACEHOLDER_IMAGE = "assets/projector-placeholder.svg";
