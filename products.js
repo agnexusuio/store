@@ -259,18 +259,4 @@ window.AGNEXUS_PRODUCTS = [
     "price": 710,
     "image": "assets/products/20-cod-l-1807-lenovo-ideapad-slim-3-15amn8-amd-ryzen-5-7520u-16gb-lpddr5-51.png"
   }
-  ,
-  {
-    "id": "pro-001",
-    "title": "Mini Proyector portátil 1080P LED - AliExpress",
-    "processor": "N/A",
-    "processorFamily": "Proyector",
-    "ram": "N/A",
-    "storage": "N/A",
-    "display": "Proyección 1080P",
-    "secondary": "Proyector portátil · LED · Entrada HDMI/USB",
-    "description": "Versátil proyector portátil.",
-    "price": 652.95,
-    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/336496165/UC/PX/YI/109919174/s5-priyanka.jpg",
-    "category": "proyectores"
 ];
