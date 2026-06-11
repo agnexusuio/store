@@ -1,4 +1,4 @@
-window.AGNEXUS_PRODUCTS = [
+﻿window.AGNEXUS_PRODUCTS = [
   {
     "id": "agn-001",
     "title": "ENV 1781 Laptopt Tablet ENV Book Pro 2 en 1 8GB RAM 512GB SSD 15.6\"",
@@ -258,5 +258,21 @@ window.AGNEXUS_PRODUCTS = [
     "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
     "price": 710,
     "image": "assets/products/20-cod-l-1807-lenovo-ideapad-slim-3-15amn8-amd-ryzen-5-7520u-16gb-lpddr5-51.png"
+  }
+  ,
+  {
+    "id": "pro-001",
+    "title": "Mini Proyector portátil 1080P LED - AliExpress",
+    "processor": "N/A",
+    "processorFamily": "Proyector",
+    "ram": "N/A",
+    "storage": "N/A",
+    "display": "Proyección 1080P",
+    "secondary": "Proyector portátil · LED · Entrada HDMI/USB",
+    "description": "Versátil proyector portátil. Ver ficha en AliExpress: https://www.aliexpress.us/item/3256806123892101.html",
+    "price": 404.42,
+    "image": "",
+    "category": "proyectores",
+    "externalLink": "https://www.aliexpress.us/item/3256806123892101.html?spm=a2g0o.productlist.main.3.76f95887pU6vzi&algo_pvid=4aa24720-fd1a-4719-9b2b-8715ae4faf0a&algo_exp_id=4aa24720-fd1a-4719-9b2b-8715ae4faf0a-2&pdp_ext_f=%7B%22order%22%3A%22283%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21USD%21742.77%21404.42%21%21%215008.57%212727.06%21%40212e508f17811836213535507ef9e8%2112000036710182526%21sea%21US%21905919232%21X%211%210%21n_tag%3A-29919%3Bd%3Aa05e232b%3Bm03_new_user%3A-29895%3BpisId%3A5000000204411062&curPageLogUid=FfoICCIpEBRQ&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006310206853%7C_p_origin_prod%3A"
   }
 ];

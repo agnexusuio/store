@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #eef5fb;
   --surface: rgba(255, 255, 255, 0.84);
   --surface-strong: #ffffff;
@@ -456,6 +456,7 @@ img {
 
 .product-image-wrap {
   display: grid;
+  position: relative;
   place-items: center;
   min-height: 220px;
   padding: 18px;
@@ -468,6 +469,21 @@ img {
   width: 100%;
   max-height: 180px;
   object-fit: contain;
+}
+
+.product-badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: linear-gradient(135deg, #ff9f1c 0%, #ff6b6b 100%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
 .product-body {

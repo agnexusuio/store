@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -90,8 +90,14 @@
 
         <div class="catalog-toolbar">
           <label class="field">
-            <span>Buscar laptop</span>
-            <input id="searchInput" type="search" placeholder="Marca, modelo, procesador, RAM o pantalla">
+            <span>Categoría</span>
+            <select id="categorySelect">
+              <option value="all">Todas</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Buscar producto</span>
+            <input id="searchInput" type="search" placeholder="Marca, modelo, procesador, RAM, pantalla o categoría">
           </label>
           <label class="field">
             <span>Procesador</span>
@@ -146,6 +152,7 @@
     <article class="product-card">
       <div class="product-image-wrap">
         <img class="product-image" src="" alt="" loading="lazy">
+        <span class="product-badge" style="display:none">Proyector</span>
       </div>
       <div class="product-body">
         <p class="product-processor"></p>
@@ -156,6 +163,7 @@
       </div>
       <a class="button button-primary product-whatsapp" href="#" target="_blank" rel="noreferrer">Cotizar por
         WhatsApp</a>
+      <a class="button button-secondary product-external" href="#" target="_blank" rel="noreferrer" style="display:none;margin-left:8px;">Ver en tienda</a>
     </article>
   </template>
 
