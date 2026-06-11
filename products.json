@@ -259,4 +259,21 @@
     "price": 710,
     "image": "assets/products/20-cod-l-1807-lenovo-ideapad-slim-3-15amn8-amd-ryzen-5-7520u-16gb-lpddr5-51.png"
   }
+  ,
+  {
+    "id": "agn-021",
+    "title": "Mini Proyector LED 1080P - portátil, HDMI/WiFi",
+    "processor": "Mini Proyector",
+    "processorFamily": "Proyector",
+    "ram": "",
+    "storage": "",
+    "display": "1080P (Soporte)",
+    "secondary": "Proyector portátil · HDMI · WiFi · Batería integrada opcional",
+    "description": "Proyector compacto y portátil ideal para presentaciones y cine en casa. Compatible con HDMI, USB y conexión inalámbrica.",
+    "price": 404.42,
+    "image": "",
+    "externalLink": "https://www.aliexpress.us/item/3256806123892101.html?spm=a2g0o.productlist.main.3.224758870HwBcc&algo_pvid=c933de4b-d631-42f7-af01-c1977c65b0ac&algo_exp_id=c933de4b-d631-42f7-af01-c1977c65b0ac-2&pdp_ext_f=%7B%22order%22%3A%22283%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21USD%21742.77%21404.42%21%21%215008.57%212727.06%21%402102f0cc17811986534285569e9151%2112000036710182526%21sea%21US%21905919232%21X%211%210%21n_tag%3A-29919%3Bd%3Aa05e232b%3Bm03_new_user%3A-29895%3BpisId%3A5000000204411062&curPageLogUid=jdiUpHWBjq4K&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006310206853%7C_p_origin_prod%3A"
+    ,
+    "category": "proyectores"
+  }
 ]
