@@ -92,19 +92,6 @@ window.AGNEXUS_PRODUCTS = [
   },
   {
     "id": "agn-008",
-    "title": "Asus VivoBook Go 15 E1504F Ryzen 3 7320U 8GB RAM 512GB SSD 15.6\"",
-    "processor": "Ryzen 3 7320U",
-    "processorFamily": "Ryzen 3",
-    "ram": "8GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Ryzen 3 7320U · 15.6\" · Perfil productivo · Lector de huellas",
-    "description": "Muy conveniente para quien busca movilidad, buena respuesta y almacenamiento sólido.",
-    "price": 560,
-    "image": "assets/products/08-cod-1795-asus-vivobook-go-15-e1504f-amd-ryzen-3-7320u-8-gb-lpddr5-512gb.png"
-  },
-  {
-    "id": "agn-009",
     "title": "Lenovo IdeaPad 1 15AMN7 Ryzen 5 7520U 8GB RAM 256GB SSD 15.6\"",
     "processor": "Ryzen 5 7520U",
     "processorFamily": "Ryzen 5",
@@ -114,7 +101,20 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Ryzen 5 7520U · 15.6\" · Perfil productivo",
     "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
     "price": 560,
-    "image": "assets/products/09-cod-1823-lenovo-ideapad-1-15amn7-amd-ryzen-5-7520u-8gb-lpddr5-5500-256gb.png"
+    "image": "assets/products/08-cod-1823-lenovo-ideapad-1-15amn7-amd-ryzen-5-7520u-8gb-lpddr5-5500-256gb.png"
+  },
+  {
+    "id": "agn-009",
+    "title": "ENV Ryzen 5 3500U 16GB RAM 512GB SSD 15.6\"",
+    "processor": "Ryzen 5 3500U",
+    "processorFamily": "Ryzen 5",
+    "ram": "16GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · Ryzen 5 3500U · 15.6\" · 16GB RAM",
+    "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
+    "price": 580,
+    "image": "assets/products/09-cod-e-1776-laptop-env-amd-ryzen-5-3500u-2-1ghz-hasta-3-7ghz-16gb-512gb-n.png"
   },
   {
     "id": "agn-010",
@@ -127,20 +127,20 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Ryzen 5 3500U · 15.6\" · 16GB RAM",
     "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
     "price": 580,
-    "image": "assets/products/10-cod-e-1776-laptop-env-amd-ryzen-5-3500u-2-1ghz-hasta-3-7ghz-16gb-512gb-n.png"
+    "image": "assets/products/10-cod-1775-laptop-env-amd-ryzen-5-3500u-2-1ghz-hasta-3-7ghz-16gb-512gb-nvm.png"
   },
   {
     "id": "agn-011",
-    "title": "ENV Ryzen 5 3500U 16GB RAM 512GB SSD 15.6\"",
-    "processor": "Ryzen 5 3500U",
-    "processorFamily": "Ryzen 5",
-    "ram": "16GB RAM",
+    "title": "Asus VivoBook Go 15 E1504F Ryzen 3 7320U 8GB RAM 512GB SSD 15.6\"",
+    "processor": "Ryzen 3 7320U",
+    "processorFamily": "Ryzen 3",
+    "ram": "8GB RAM",
     "storage": "512GB SSD",
     "display": "15.6\"",
-    "secondary": "Windows 11 · Ryzen 5 3500U · 15.6\" · 16GB RAM",
-    "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
+    "secondary": "Windows 11 · Ryzen 3 7320U · 15.6\" · Perfil productivo · Lector de huellas",
+    "description": "Muy conveniente para quien busca movilidad, buena respuesta y almacenamiento sólido.",
     "price": 580,
-    "image": "assets/products/11-cod-1775-laptop-env-amd-ryzen-5-3500u-2-1ghz-hasta-3-7ghz-16gb-512gb-nvm.png"
+    "image": "assets/products/11-cod-1795-asus-vivobook-go-15-e1504f-amd-ryzen-3-7320u-8-gb-lpddr5-512gb.png"
   },
   {
     "id": "agn-012",
@@ -152,11 +152,24 @@ window.AGNEXUS_PRODUCTS = [
     "display": "15.6\"",
     "secondary": "Windows 11 · Intel Core i3-1315U · 15.6\" · Perfil productivo",
     "description": "Buena elección para estudio, oficina y productividad con imagen sobria y moderna.",
-    "price": 600,
+    "price": 610,
     "image": "assets/products/12-cod-1766-kit-asus-vivobook-15-x1504v-intel-core-i3-1315u-13va-gen-10mb-c.png"
   },
   {
     "id": "agn-013",
+    "title": "Lenovo IdeaPad Slim 3 15IAN8 Intel Core i3-N305 8GB RAM 512GB SSD 15.6\"",
+    "processor": "Intel Core i3-N305",
+    "processorFamily": "Core i3",
+    "ram": "8GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · Intel Core i3-N305 · 15.6\" · Perfil productivo",
+    "description": "Buena elección para estudio, oficina y productividad con imagen sobria y moderna.",
+    "price": 610,
+    "image": "assets/products/13-cod-1787-lenovo-ideapad-slim-3-15ian8-intel-core-i3-n305-8-n-cleos-hasta.png"
+  },
+  {
+    "id": "agn-014",
     "title": "Asus VivoBook 15 X1504V Intel Core i3-1315U 16GB RAM 512GB SSD 15.6\"",
     "processor": "Intel Core i3-1315U",
     "processorFamily": "Core i3",
@@ -166,10 +179,10 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Intel Core i3-1315U · 15.6\" · 16GB RAM",
     "description": "Buena elección para estudio, oficina y productividad con imagen sobria y moderna.",
     "price": 660,
-    "image": "assets/products/13-cod-1774-kit-asus-vivobook-15-x1504v-intel-core-i3-1315u-13va-gen-10mb-c.png"
+    "image": "assets/products/14-cod-1774-kit-asus-vivobook-15-x1504v-intel-core-i3-1315u-13va-gen-10mb-c.png"
   },
   {
-    "id": "agn-014",
+    "id": "agn-015",
     "title": "Lenovo V15 G5 IRL Intel Core i5-13420H 8GB RAM 512GB SSD 15.6\"",
     "processor": "Intel Core i5-13420H",
     "processorFamily": "Core i5",
@@ -179,10 +192,10 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Intel Core i5-13420H · 15.6\" · Perfil productivo",
     "description": "Sube de nivel con un rendimiento más sólido para oficina, estudio y multitarea real.",
     "price": 670,
-    "image": "assets/products/14-cod-1793-lenovo-v15-g5-irl-intel-core-i5-13420h-13va-gen-8gb-ddr5-512gb.png"
+    "image": "assets/products/15-cod-1793-lenovo-v15-g5-irl-intel-core-i5-13420h-13va-gen-8gb-ddr5-512gb.png"
   },
   {
-    "id": "agn-015",
+    "id": "agn-016",
     "title": "Asus VivoBook 15 X1504V Intel Core 5 120U Última Generación 8GB RAM 512GB SSD 15.6\"",
     "processor": "Intel Core 5 120U Última Generación",
     "processorFamily": "Otros",
@@ -192,10 +205,10 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Intel Core 5 120U Última Generación · 15.6\" · Perfil productivo · Lector de huellas",
     "description": "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.",
     "price": 670,
-    "image": "assets/products/15-cod-1797-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
+    "image": "assets/products/16-cod-1797-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
   },
   {
-    "id": "agn-016",
+    "id": "agn-017",
     "title": "Asus VivoBook 15 M1502YA Ryzen 7 5825U 8GB RAM 512GB SSD 15.6\"",
     "processor": "Ryzen 7 5825U",
     "processorFamily": "Ryzen 7",
@@ -205,10 +218,10 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Ryzen 7 5825U · 15.6\" · Chip Ryzen 7",
     "description": "Excelente para productividad exigente con una configuración actual y muy competitiva.",
     "price": 690,
-    "image": "assets/products/16-cod-1805-asus-vivobook-15-m1502ya-amd-ryzen-7-5825u-8-n-cleos-16-subproc.png"
+    "image": "assets/products/17-cod-1805-asus-vivobook-15-m1502ya-amd-ryzen-7-5825u-8-n-cleos-16-subproc.png"
   },
   {
-    "id": "agn-017",
+    "id": "agn-018",
     "title": "Asus VivoBook 15 X1504V Intel Core 5 120U Última Generación 16GB RAM 512GB SSD 15.6\"",
     "processor": "Intel Core 5 120U Última Generación",
     "processorFamily": "Otros",
@@ -218,20 +231,7 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · Intel Core 5 120U Última Generación · 15.6\" · 16GB RAM · Lector de huellas",
     "description": "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.",
     "price": 690,
-    "image": "assets/products/17-cod-1817-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
-  },
-  {
-    "id": "agn-018",
-    "title": "DELL 15 DC15250 Intel Core i5-1334U 8GB RAM 512GB SSD 15.6\"",
-    "processor": "Intel Core i5-1334U",
-    "processorFamily": "Core i5",
-    "ram": "8GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Intel Core i5-1334U · 15.6\" · Panel Full HD 120Hz",
-    "description": "Sube de nivel con un rendimiento más sólido para oficina, estudio y multitarea real.",
-    "price": 700,
-    "image": "assets/products/18-cod-1802-dell-15-dc15250-intel-core-i5-1334u-13-gen-8gb-512gb-nvme-ssd-1.png"
+    "image": "assets/products/18-cod-1817-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-ltima-generac.png"
   },
   {
     "id": "agn-019",
@@ -241,10 +241,10 @@ window.AGNEXUS_PRODUCTS = [
     "ram": "8GB RAM",
     "storage": "512GB SSD",
     "display": "15.6\"",
-    "secondary": "Windows 11 · Intel Core i5-1334U · 15.6\" · Perfil productivo",
+    "secondary": "Windows 11 · Intel Core i5-1334U · 15.6\" · Panel Full HD 120Hz",
     "description": "Sube de nivel con un rendimiento más sólido para oficina, estudio y multitarea real.",
     "price": 700,
-    "image": "assets/products/19-cod-1827-dell-15-dc15250-intel-core-i5-1334u-13-gen-8gb-512gb-nvme-ssd-1.png"
+    "image": "assets/products/19-cod-1802-dell-15-dc15250-intel-core-i5-1334u-13-gen-8gb-512gb-nvme-ssd-1.png"
   },
   {
     "id": "agn-020",
