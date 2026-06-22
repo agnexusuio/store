@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -88,38 +88,38 @@
           <h2>Encuentra la laptop ideal para trabajar mejor, estudiar con fluidez y avanzar sin pausas.</h2>
         </div>
 
-        <div class="catalog-toolbar">
-          <label class="field">
-            <span>Categoría</span>
-            <select id="categorySelect">
-              <option value="all">Todas</option>
-            </select>
-          </label>
-          <label class="field">
-            <span>Buscar producto</span>
-            <input id="searchInput" type="search" placeholder="Marca, modelo, procesador, RAM, pantalla o categoría">
-          </label>
-          <label class="field">
-            <span>Procesador</span>
-            <select id="processorFilter">
-              <option value="all">Todos</option>
-            </select>
-          </label>
-          <label class="field">
-            <span>Ordenar por precio</span>
-            <select id="sortSelect">
-              <option value="price-asc">Menor a mayor</option>
-              <option value="price-desc">Mayor a menor</option>
-              <option value="name-asc">Nombre A-Z</option>
-            </select>
-          </label>
-        </div>
+        <div class="catalog-body">
+          <aside class="catalog-sidebar">
+            <div class="catalog-sidebar-header">
+              <p class="eyebrow">Filtros</p>
+              <h3>Refina tu búsqueda</h3>
+            </div>
+            <div class="catalog-toolbar">
+              <label class="field">
+                <span>Buscar producto</span>
+                <input id="searchInput" type="search" placeholder="Marca, modelo, procesador, RAM, pantalla o categoría">
+              </label>
+              <label class="field">
+                <span>Procesador</span>
+                <select id="processorFilter">
+                  <option value="all">Todos</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Ordenar por precio</span>
+                <select id="sortSelect">
+                  <option value="price-asc">Menor a mayor</option>
+                  <option value="price-desc">Mayor a menor</option>
+                  <option value="name-asc">Nombre A-Z</option>
+                </select>
+              </label>
+            </div>
+          </aside>
 
-        <div class="catalog-status">
-          <p id="resultsCount">40 laptops disponibles</p>
+          <div class="catalog-products">
+            <div id="productsGrid" class="products-grid" aria-live="polite"></div>
+          </div>
         </div>
-
-        <div id="productsGrid" class="products-grid" aria-live="polite"></div>
       </section>
 
       <section class="cta-banner">

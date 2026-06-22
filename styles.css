@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #eef5fb;
   --surface: rgba(255, 255, 255, 0.84);
   --surface-strong: #ffffff;
@@ -380,15 +380,52 @@ img {
   line-height: 1.7;
 }
 
+.catalog-body {
+  display: grid;
+  grid-template-columns: minmax(280px, 320px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.catalog-sidebar {
+  display: grid;
+  gap: 22px;
+  padding: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 248, 253, 0.94));
+  border: 1px solid rgba(33, 95, 155, 0.12);
+  border-radius: calc(var(--radius-lg) + 4px);
+  box-shadow: 0 20px 48px rgba(21, 58, 91, 0.12);
+  align-self: start;
+}
+
+.catalog-sidebar {
+  position: sticky;
+  top: 94px;
+}
+
+.catalog-sidebar-header {
+  display: grid;
+  gap: 8px;
+}
+
+.catalog-sidebar-header h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.15;
+}
+
+.catalog-sidebar-header .eyebrow {
+  margin: 0;
+}
+
 .catalog-toolbar {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 14px;
-  margin: 0 0 14px;
-  padding: 18px;
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 .field {
@@ -436,10 +473,25 @@ img {
   font-weight: 700;
 }
 
+.catalog-products {
+  display: grid;
+  gap: 18px;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
+}
+
+@media (max-width: 1120px) {
+  .catalog-body {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .product-card {
@@ -638,10 +690,39 @@ img {
     max-width: 100%;
   }
 
-  .catalog-toolbar,
-  .value-strip,
+  .catalog-body {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .catalog-sidebar {
+    padding: 20px;
+  }
+
   .products-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-card-main {
+    right: 24px;
+  }
+
+  .hero-card-float {
+    left: 24px;
+    right: auto;
+  }
+
+  .product-card {
+    padding: 18px;
+  }
+
+  .cta-banner {
+    padding: 24px;
   }
 }
 

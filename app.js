@@ -1,4 +1,4 @@
-﻿const PRODUCTS = Array.isArray(window.AGNEXUS_PRODUCTS) ? window.AGNEXUS_PRODUCTS : [];
+const PRODUCTS = Array.isArray(window.AGNEXUS_PRODUCTS) ? window.AGNEXUS_PRODUCTS : [];
 const WHATSAPP_NUMBER = "593992217314";
 const PLACEHOLDER_IMAGE = "assets/laptop-placeholder.svg";
 const PROJECTOR_PLACEHOLDER_IMAGE = "assets/projector-placeholder.svg";
@@ -6,9 +6,7 @@ const PROJECTOR_PLACEHOLDER_IMAGE = "assets/projector-placeholder.svg";
 const searchInput = document.querySelector("#searchInput");
 const processorFilter = document.querySelector("#processorFilter");
 const sortSelect = document.querySelector("#sortSelect");
-const categorySelect = document.querySelector("#categorySelect");
 const productsGrid = document.querySelector("#productsGrid");
-const resultsCount = document.querySelector("#resultsCount");
 const template = document.querySelector("#productCardTemplate");
 
 const money = new Intl.NumberFormat("es-EC", {
@@ -98,12 +96,10 @@ function createCard(product) {
 function renderProducts() {
   const searchValue = (searchInput.value || "").trim().toLowerCase();
   const processorValue = processorFilter.value;
-  const categoryValue = categorySelect ? categorySelect.value : "all";
   const sortValue = sortSelect.value;
 
   const filtered = PRODUCTS
     .filter((product) => {
-      const productCategory = product.category || "laptops";
       const haystack = [
         product.title,
         product.processor,
@@ -117,8 +113,7 @@ function renderProducts() {
 
       const matchesSearch = !searchValue || haystack.includes(searchValue);
       const matchesProcessor = processorValue === "all" || product.processorFamily === processorValue;
-      const matchesCategory = categoryValue === "all" || productCategory === categoryValue;
-      return matchesSearch && matchesProcessor && matchesCategory;
+      return matchesSearch && matchesProcessor;
     })
     .sort((a, b) => compareBySort(a, b, sortValue));
 
@@ -135,16 +130,6 @@ function renderProducts() {
     });
   }
 
-  // Mostrar conteo con etiqueta según categoría seleccionada
-  let label;
-  if (categoryValue === "all") {
-    label = "productos";
-  } else if (categoryValue === "proyectores") {
-    label = `proyector${filtered.length === 1 ? "" : "es"}`;
-  } else {
-    label = `laptop${filtered.length === 1 ? "" : "s"}`;
-  }
-  resultsCount.textContent = `${filtered.length} ${label} disponibles`;
 }
 
 function fillProcessorFilter() {
@@ -162,31 +147,7 @@ function fillProcessorFilter() {
   });
 }
 
-function fillCategorySelect() {
-  if (!categorySelect) return;
-  // Obtener categorías desde el catálogo (por defecto 'laptops')
-  const cats = [...new Set(PRODUCTS.map((p) => p.category || "laptops"))].sort();
-  // Limpiar y añadir opción 'Todas'
-  categorySelect.innerHTML = "<option value=\"all\">Todas</option>";
-  cats.forEach((cat) => {
-    const option = document.createElement("option");
-    option.value = cat;
-    // Etiqueta legible
-    if (cat === "proyectores") option.textContent = "Proyectores";
-    else if (cat === "laptops") option.textContent = "Laptops";
-    else option.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-    categorySelect.append(option);
-  });
-}
-
-fillCategorySelect();
 fillProcessorFilter();
-if (categorySelect) {
-  categorySelect.addEventListener("change", () => {
-    fillProcessorFilter();
-    renderProducts();
-  });
-}
 
 searchInput.addEventListener("input", renderProducts);
 processorFilter.addEventListener("change", renderProducts);
