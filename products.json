@@ -258,18 +258,5 @@
     "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
     "price": 710,
     "image": "assets/products/20-cod-l-1807-lenovo-ideapad-slim-3-15amn8-amd-ryzen-5-7520u-16gb-lpddr5-51.png"
-  },
-  {
-    "id": "agn-021",
-    "title": "Magcubic HY350MAX Proyector Android 14 900ANSI 4K 1080P Native",
-    "processor": "H726 Chip",
-    "processorFamily": "Proyector",
-    "ram": "2GB RAM",
-    "storage": "32GB",
-    "display": "150\" Pantalla",
-    "secondary": "Android 14 · 900ANSI · 1080P Native · Auto Focus · WiFi 5G",
-    "description": "Proyector portátil con Android 14, enfoque automático y soporte 8K para cine en casa.",
-    "price": 200,
-    "image": "assets/products/laptop-placeholder.svg"
   }
 ]
