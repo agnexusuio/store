@@ -3,6 +3,7 @@ const WHATSAPP_NUMBER = "593992217314";
 const PLACEHOLDER_IMAGE = "assets/laptop-placeholder.svg";
 
 const searchInput = document.querySelector("#searchInput");
+const productTypeFilter = document.querySelector("#productTypeFilter");
 const processorFilter = document.querySelector("#processorFilter");
 const sortSelect = document.querySelector("#sortSelect");
 const productsGrid = document.querySelector("#productsGrid");
@@ -47,6 +48,14 @@ function compareBySort(a, b, sortValue) {
   return a.price - b.price;
 }
 
+function getProductType(product) {
+  return product.category || "Laptops";
+}
+
+function isLaptop(product) {
+  return getProductType(product).toLowerCase() === "laptops";
+}
+
 function createCard(product) {
   const fragment = template.content.cloneNode(true);
   const image = fragment.querySelector(".product-image");
@@ -87,6 +96,7 @@ function createCard(product) {
 
 function renderProducts() {
   const searchValue = (searchInput.value || "").trim().toLowerCase();
+  const typeValue = productTypeFilter.value;
   const processorValue = processorFilter.value;
   const sortValue = sortSelect.value;
 
@@ -104,8 +114,9 @@ function renderProducts() {
       ].join(" ").toLowerCase();
 
       const matchesSearch = !searchValue || haystack.includes(searchValue);
-      const matchesProcessor = processorValue === "all" || product.processorFamily === processorValue;
-      return matchesSearch && matchesProcessor;
+      const matchesType = typeValue === "all" || getProductType(product) === typeValue;
+      const matchesProcessor = !isLaptop(product) || processorValue === "all" || product.processorFamily === processorValue;
+      return matchesSearch && matchesType && matchesProcessor;
     })
     .sort((a, b) => compareBySort(a, b, sortValue));
 
@@ -114,7 +125,7 @@ function renderProducts() {
   if (!filtered.length) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.innerHTML = "<strong>No encontramos coincidencias.</strong><p>Prueba con otro procesador, menos palabras o un orden distinto.</p>";
+    empty.innerHTML = "<strong>No encontramos coincidencias.</strong><p>Prueba con otro tipo de producto, procesador u orden de resultados.</p>";
     productsGrid.append(empty);
   } else {
     filtered.forEach((product) => {
@@ -126,7 +137,7 @@ function renderProducts() {
 }
 
 function fillProcessorFilter() {
-  const families = [...new Set(PRODUCTS.map((product) => product.processorFamily))].sort((a, b) =>
+  const families = [...new Set(PRODUCTS.filter(isLaptop).map((product) => product.processorFamily))].sort((a, b) =>
     a.localeCompare(b, "es")
   );
 
@@ -138,8 +149,23 @@ function fillProcessorFilter() {
   });
 }
 
+function fillProductTypeFilter() {
+  const categories = [...new Set(PRODUCTS.map((product) => getProductType(product)))].sort((a, b) =>
+    a.localeCompare(b, "es")
+  );
+
+  categories.forEach((category) => {
+    const option = document.createElement("option");
+    option.value = category;
+    option.textContent = category;
+    productTypeFilter.append(option);
+  });
+}
+
+fillProductTypeFilter();
 fillProcessorFilter();
 searchInput.addEventListener("input", renderProducts);
+productTypeFilter.addEventListener("change", renderProducts);
 processorFilter.addEventListener("change", renderProducts);
 sortSelect.addEventListener("change", renderProducts);
 renderProducts();
