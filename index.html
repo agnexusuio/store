@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AGNEXUS | Laptops para avanzar contigo</title>
+  <title>AGNEXUS | Catálogo de tecnología para avanzar contigo</title>
   <meta name="description"
-    content="Catálogo AGNEXUS de laptops seleccionadas para trabajo, estudio y productividad. Cotiza por WhatsApp en minutos.">
+    content="Catálogo AGNEXUS de tecnología seleccionada para trabajo, estudio y productividad. Cotiza por WhatsApp en minutos.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -35,11 +35,10 @@
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">AGNEXUS NETWORKS</p>
+          <p class="eyebrow">AGNEXUSUIO</p>
           <h1>Más potencia. Más productividad. Más AGNEXUS.</h1>
-          <p class="hero-text">Diseñadas para avanzar contigo. En AGNEXUS encontrarás laptops que combinan elegancia,
-            velocidad y precisión, pensadas para impulsar tu trabajo, estudio y productividad. Más que tecnología,
-            rendimiento: equipos confiables para un mundo más rápido.</p>
+          <p class="hero-text">Diseñados para avanzar contigo. En AGNEXUS encontrarás tecnología que combina elegancia,
+            velocidad y precisión, pensada para impulsar tu trabajo, estudio y productividad.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#catalogo">Ver catálogo</a>
             <a class="button button-secondary"
@@ -47,7 +46,7 @@
               target="_blank" rel="noreferrer">Cotizar por WhatsApp</a>
           </div>
           <ul class="hero-points">
-            <li>Equipos listos para estudio, oficina y alto rendimiento</li>
+            <li>Productos listos para estudio, oficina y alto rendimiento</li>
             <li>Cotización rápida y atención directa por WhatsApp</li>
             <li>Catálogo limpio, comparativo y fácil de escanear</li>
           </ul>
@@ -61,7 +60,7 @@
             <p>Modelos ágiles, pantallas cómodas y configuraciones pensadas para productividad real.</p>
           </div>
           <div class="hero-card hero-card-float">
-            <span>40 laptops publicadas</span>
+            <span>Innovación que impulsa resultados</span>
             <strong>Cotiza hoy</strong>
           </div>
         </div>
@@ -88,38 +87,32 @@
           <h2>Encuentra la laptop ideal para trabajar mejor, estudiar con fluidez y avanzar sin pausas.</h2>
         </div>
 
-        <div class="catalog-body">
-          <aside class="catalog-sidebar">
-            <div class="catalog-sidebar-header">
-              <p class="eyebrow">Filtros</p>
-              <h3>Refina tu búsqueda</h3>
-            </div>
-            <div class="catalog-toolbar">
-              <label class="field">
-                <span>Buscar producto</span>
-                <input id="searchInput" type="search" placeholder="Marca, modelo, procesador, RAM, pantalla o categoría">
-              </label>
-              <label class="field">
-                <span>Procesador</span>
-                <select id="processorFilter">
-                  <option value="all">Todos</option>
-                </select>
-              </label>
-              <label class="field">
-                <span>Ordenar por precio</span>
-                <select id="sortSelect">
-                  <option value="price-asc">Menor a mayor</option>
-                  <option value="price-desc">Mayor a menor</option>
-                  <option value="name-asc">Nombre A-Z</option>
-                </select>
-              </label>
-            </div>
-          </aside>
-
-          <div class="catalog-products">
-            <div id="productsGrid" class="products-grid" aria-live="polite"></div>
-          </div>
+        <div class="catalog-toolbar">
+          <label class="field">
+            <span>Buscar producto</span>
+            <input id="searchInput" type="search" placeholder="Nombre, categoría, marca o característica">
+          </label>
+          <label class="field">
+            <span>Procesador</span>
+            <select id="processorFilter">
+              <option value="all">Todos</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Ordenar por precio</span>
+            <select id="sortSelect">
+              <option value="price-asc">Menor a mayor</option>
+              <option value="price-desc">Mayor a menor</option>
+              <option value="name-asc">Nombre A-Z</option>
+            </select>
+          </label>
         </div>
+
+        <div class="catalog-status">
+          <p id="resultsCount">0 productos disponibles</p>
+        </div>
+
+        <div id="productsGrid" class="products-grid" aria-live="polite"></div>
       </section>
 
       <section class="cta-banner">
@@ -152,7 +145,6 @@
     <article class="product-card">
       <div class="product-image-wrap">
         <img class="product-image" src="" alt="" loading="lazy">
-        <span class="product-badge" style="display:none">Proyector</span>
       </div>
       <div class="product-body">
         <p class="product-processor"></p>
@@ -163,7 +155,6 @@
       </div>
       <a class="button button-primary product-whatsapp" href="#" target="_blank" rel="noreferrer">Cotizar por
         WhatsApp</a>
-      <a class="button button-secondary product-external" href="#" target="_blank" rel="noreferrer" style="display:none;margin-left:8px;">Ver en tienda</a>
     </article>
   </template>
 

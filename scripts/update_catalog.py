@@ -4,7 +4,6 @@ import html
 import json
 import math
 import re
-import shutil
 import time
 import urllib.error
 import urllib.parse
@@ -15,8 +14,9 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS_DIR = ROOT / "assets" / "products"
 JSON_PATH = ROOT / "products.json"
 JS_PATH = ROOT / "products.js"
+PLACEHOLDER_IMAGE = "assets/laptop-placeholder.svg"
 
-USER_AGENT = "Mozilla/5.0 (compatible; AGNEXUSCatalogBot/1.0)"
+USER_AGENT = "Mozilla/5.0 (compatible; AGNEXUSCatalogBot/2.0)"
 BRANDS = ["Asus", "Lenovo", "HP", "ACER", "MSI", "DELL", "ENV"]
 
 PINSOFT_URLS = [
@@ -27,16 +27,101 @@ PINSOFT_URLS = [
 DIGITALPC_URL_TEMPLATE = "https://digitalpcecuador.com/categoria-producto/laptops/page/{page}/?orderby=price"
 DIGITALPC_FIRST_PAGE = "https://digitalpcecuador.com/categoria-producto/laptops/?orderby=price"
 
+# Datos reales extraidos de listados de AliExpress (2026-06-24/25)
+ALIEXPRESS_PRODUCTS = [
+    {
+        "id": "ali-proj-001",
+        "category": "Proyectores ANSI",
+        "source": "aliexpress",
+        "title": "Proyector Touyinger Z7 Linux HDR10+ 1080P 4K 1200 ANSI",
+        "raw_title": "Proyector Touyinger Z7 con Sistema Linux, HDR10+, Full HD 1080P, Compatible con 4K, 1200 ANSI Lumenes, Enfoque Automatico, Portatil, para Interiores y Exteriores, Proyector Inteligente",
+        "url": "https://es.aliexpress.com/item/1005012344223283.html",
+        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/S3d7a3131d4b843dfa04c911f6f0a4d4cY.jpg_480x480q75.jpg_.avif",
+        "price": 149.57,
+        "lumenAnsi": 1200,
+        "price_markup": 110,
+        "secondary": "AliExpress · 1200 ANSI lumenes · Linux/HDR10+ · 1080P nativo",
+        "description": "Proyector con alto brillo ANSI para cine en casa y presentaciones con buena luz ambiental.",
+    },
+    {
+        "id": "ali-proj-002",
+        "category": "Proyectores ANSI",
+        "source": "aliexpress",
+        "title": "Proyector Touyinger Z7 1080P 4K 1200 ANSI Smart TV",
+        "raw_title": "Proyector Touyinger Z7 1080P HD 4K Smart TV 1200 ANSI Lumenes, Proyector de Video para Cine en Casa con Soporte de 360 Mini Beam",
+        "url": "https://es.aliexpress.com/item/1005011624160042.html",
+        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/See38149f0e58495390fda92645d35231z.jpg_480x480q75.jpg_.avif",
+        "price": 137.13,
+        "lumenAnsi": 1200,
+        "price_markup": 110,
+        "secondary": "AliExpress · 1200 ANSI lumenes · Smart TV · Soporte 360",
+        "description": "Modelo compacto de alto brillo ANSI con enfoque en cine en casa y uso flexible.",
+    },
+    {
+        "id": "ali-proj-003",
+        "category": "Proyectores ANSI",
+        "source": "aliexpress",
+        "title": "Proyector Touyinger L9W Ultra 4K 1080P 1000 ANSI",
+        "raw_title": "Proyector Touyinger L9W Ultra, Compatible con 4K 1080P, 2G+32G, 1000 ANSI, Enfoque Automatico y Correccion Trapezoidal, Wifi6, BT, Cine en Casa",
+        "url": "https://es.aliexpress.com/item/1005012325397628.html",
+        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/Sdaef64660af24482985388598ed7d453X.jpg_480x480q75.jpg_.avif",
+        "price": 115.112,
+        "lumenAnsi": 1000,
+        "price_markup": 110,
+        "secondary": "AliExpress · 1000 ANSI lumenes · Enfoque automatico · Wifi6/BT",
+        "description": "Proyector de 1000 ANSI con conectividad moderna para entretenimiento y productividad.",
+    },
+    {
+        "id": "ali-gls-001",
+        "category": "Gafas IA",
+        "source": "aliexpress",
+        "title": "Gafas Lenovo IA 8K HD con traduccion en tiempo real",
+        "raw_title": "Gafas Inteligentes Lenovo 8K HD con IA, Camara de 1600W, Traduccion en Tiempo Real, Llamadas Bluetooth, Grabacion de Audio y Video, Reproduccion de Musica, Gafas de Sol 2026",
+        "url": "https://es.aliexpress.com/item/1005012432973677.html",
+        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/S4b9441a4833f48d5adb0364234ab0c8fu.jpg_480x480q75.jpg_.avif",
+        "price": 38.53,
+        "price_markup": 70,
+        "secondary": "AliExpress · Traduccion en tiempo real · Bluetooth · Camara integrada",
+        "description": "Gafas inteligentes orientadas a traduccion de idiomas, llamadas y grabacion ligera.",
+    },
+    {
+        "id": "ali-gls-002",
+        "category": "Gafas IA",
+        "source": "aliexpress",
+        "title": "Gafas Xiaomi IA 8K HD con traduccion y dialogo",
+        "raw_title": "Gafas Inteligentes Xiaomi con IA, Camara 8K HD, Luz LED, Traduccion, Dialogo, Grabacion de Video, Gafas de Sol Deportivas para Exteriores, Novedad 2026",
+        "url": "https://es.aliexpress.com/item/1005012242662688.html",
+        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/S03a2e1dbed874755bbd5413769ae0973q.jpg_480x480q75.jpg_.avif",
+        "price": 32.09,
+        "price_markup": 70,
+        "secondary": "AliExpress · Traduccion y dialogo IA · Camara 8K HD · Luz LED",
+        "description": "Gafas de traduccion IA pensadas para viajes y uso diario con funciones multimedia.",
+    },
+    {
+        "id": "ali-gls-003",
+        "category": "Gafas IA",
+        "source": "aliexpress",
+        "title": "Gafas IA con traduccion, bluetooth y control tactil",
+        "raw_title": "Gafas Inteligentes con Traduccion IA, Lentes con Cambio de Color y Control Bluetooth, Llamadas Bluetooth, Gafas Inteligentes con IA",
+        "url": "https://es.aliexpress.com/item/1005011803378382.html",
+        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/Scb4e9678124b481a972e179480be4741x.jpg_480x480q75.jpg_.avif",
+        "price": 26.35,
+        "price_markup": 70,
+        "secondary": "AliExpress · Traduccion IA · Control Bluetooth · Lentes fotocromaticos",
+        "description": "Opcion accesible de gafas inteligentes con traduccion y funciones de conectividad.",
+    },
+]
+
 
 def fetch_text(url: str, retries: int = 3) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     for attempt in range(retries):
         try:
-            with urllib.request.urlopen(request, timeout=30) as response:
+            with urllib.request.urlopen(request, timeout=35) as response:
                 return response.read().decode("utf-8", errors="ignore")
         except urllib.error.HTTPError as exc:
             if exc.code == 429 and attempt < retries - 1:
-                time.sleep(5 * (attempt + 1))
+                time.sleep(4 * (attempt + 1))
                 continue
             raise
         except Exception:
@@ -47,41 +132,31 @@ def fetch_text(url: str, retries: int = 3) -> str:
 
 
 def download_file(url: str, target: Path, retries: int = 3) -> bool:
-    """Descarga un archivo con reintentos y validación de tamaño."""
-    if not url or url.strip() == "":
+    if not url:
         return False
-    
+
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     for attempt in range(retries):
         try:
             with urllib.request.urlopen(request, timeout=45) as response:
                 content = response.read()
-                # Validar que no sea una página de error o muy pequeña
-                if len(content) < 5000:
+                if len(content) < 2048:
                     if attempt < retries - 1:
-                        time.sleep(2 * (attempt + 1))
+                        time.sleep(1.5 * (attempt + 1))
                     continue
                 target.write_bytes(content)
-            return target.exists() and target.stat().st_size > 5000
-        except urllib.error.HTTPError as exc:
-            if exc.code == 429 and attempt < retries - 1:
-                time.sleep(5 * (attempt + 1))
+            return target.exists() and target.stat().st_size >= 2048
+        except Exception:
+            if attempt < retries - 1:
+                time.sleep(1.5 * (attempt + 1))
                 continue
-            if attempt < retries - 1:
-                time.sleep(2 * (attempt + 1))
-            continue
-        except Exception as exc:
-            if attempt < retries - 1:
-                time.sleep(2 * (attempt + 1))
-            continue
     return False
 
 
 def normalize_space(value: str) -> str:
     value = html.unescape(value or "")
     value = value.replace("\xa0", " ")
-    value = re.sub(r"\s+", " ", value).strip()
-    return value
+    return re.sub(r"\s+", " ", value).strip()
 
 
 def parse_pinsoft_listing(page_html: str) -> list[dict]:
@@ -156,30 +231,6 @@ def digital_large_image(product_url: str, fallback: str) -> str:
     return fallback
 
 
-def search_alternative_image(brand: str, model: str) -> str | None:
-    """Intenta descargar imagen de fuente alternativa usando búsqueda."""
-    search_term = f"{brand} {model} laptop".replace(" ", "+")
-    # Usar DuckDuckGo como alternativa más amigable que Google
-    urls = [
-        f"https://duckduckgo.com/?q={search_term}+laptop&ia=images&iax=images",
-        f"https://www.bing.com/images/search?q={search_term}",
-    ]
-    
-    for url in urls:
-        try:
-            page = fetch_text(url, retries=2)
-            # Intentar extraer URL de imagen de la página
-            if "duckduckgo" in url:
-                match = re.search(r'"url":\s*"(https?://[^"]+\.(jpg|png|jpeg))"', page, re.I)
-            else:
-                match = re.search(r'murl="([^"]*)"', page)
-            if match:
-                return match.group(1)
-        except Exception:
-            continue
-    return None
-
-
 def normalize_processor_family(processor: str) -> str:
     lowered = processor.lower()
     if "celeron" in lowered:
@@ -211,23 +262,14 @@ def extract_display_from_text(text: str) -> str | None:
 
 
 def extract_display(segment: str, fallback_text: str | None = None) -> str:
-    """Extrae y verifica el tamaño de pantalla, priorizando unidades explícitas."""
     segment = normalize_space(segment)
     display = extract_display_from_text(segment)
     if display:
         return display
     if fallback_text:
-        fallback_text = normalize_space(fallback_text)
-        display = extract_display_from_text(fallback_text)
+        display = extract_display_from_text(normalize_space(fallback_text))
         if display:
             return display
-    match = re.search(r"(\d{1,2}(?:[.,]\d)?)\s*$", segment)
-    if match:
-        return normalize_display_value(match.group(1))
-    if fallback_text:
-        match = re.search(r"(\d{1,2}(?:[.,]\d)?)\s*$", fallback_text)
-        if match:
-            return normalize_display_value(match.group(1))
     return '15.6"'
 
 
@@ -270,7 +312,7 @@ def clean_processor(segment: str) -> str:
         segment,
     )
     if match:
-        return match.group(1).replace("AMD ", "").replace("Intel ", "Intel ")
+        return match.group(1)
     return segment.split(",")[0].strip()
 
 
@@ -291,64 +333,50 @@ def clean_model(segment: str) -> tuple[str, str]:
     match = re.search(rf"(?i)\b{re.escape(brand)}\b(.*)", segment)
     model = match.group(1).strip() if match else segment
     model = re.sub(r"^(Laptop|Kit)\s+", "", model, flags=re.I)
-    model = re.split(r"(?i)\b(?:Intel|AMD|Ryzen|Celeron|N100|Core|RTX|[0-9]+GB|1TB|TB|SSD|HDD|RAM|TOUCH|W11|W10|WINDOWS|FHD|HD|IPS)\b", model)[0].strip()
-    model = model.replace("(E1504F)", "E1504F").replace("VIVOBOOK", "VivoBook").replace("IDEAPAD", "IdeaPad").replace("INSPIRON", "Inspiron")
+    model = re.split(
+        r"(?i)\b(?:Intel|AMD|Ryzen|Celeron|N100|Core|RTX|[0-9]+GB|1TB|TB|SSD|HDD|RAM|TOUCH|W11|W10|WINDOWS|FHD|HD|IPS)\b",
+        model,
+    )[0].strip()
     model = re.sub(r"\s+", " ", model).strip(" /")
     return brand, model
 
 
 def build_secondary(raw_title: str, processor_family: str, processor: str, display: str) -> str:
     raw = raw_title.lower()
-    parts = ["Windows 11"]
-    if "rtx" in raw:
-        match = re.search(r"rtx\s*\d+", raw)
-        parts.append(match.group(0).upper() if match else "Graficos dedicados")
+    parts = ["Windows 11", processor, display]
+    if "2 en 1" in raw or "docking" in raw:
+        parts.append("Convertible 2 en 1")
     elif "ips" in raw:
         parts.append("Panel IPS")
-    elif "wuxga" in raw:
-        parts.append("Pantalla WUXGA")
     elif "120hz" in raw:
         parts.append("Panel Full HD 120Hz")
-    elif "16gb" in raw:
-        parts.append("16GB RAM")
-    elif "wifi 6e" in raw:
-        parts.append("Wi-Fi 6E")
-    elif "wifi 6" in raw:
-        parts.append("Wi-Fi 6")
-    elif "docking" in raw or "2 en 1" in raw:
-        parts.append("Convertible 2 en 1")
     elif processor_family == "Ryzen 7":
         parts.append("Chip Ryzen 7")
     else:
         parts.append("Perfil productivo")
-    if "huella" in raw:
-        parts.append("Lector de huellas")
-    # Add processor and display
-    parts.insert(1, processor)
-    parts.insert(2, display)
-    return " · ".join(parts[:5])  # Allow up to 5 parts
+    return " · ".join(parts)
 
 
 def build_description(processor_family: str, raw_title: str) -> str:
     raw = raw_title.lower()
     if "rtx" in raw:
-        return "Muy conveniente para edición, diseño y tareas con impulso gráfico adicional."
+        return "Muy conveniente para edicion, diseno y tareas con impulso grafico adicional."
     if "2 en 1" in raw or "docking" in raw:
-        return "Una opción versátil para movilidad, clases y tareas diarias con formato táctil convertible."
+        return "Una opcion versatil para movilidad, clases y tareas diarias con formato tactil convertible."
     templates = {
-        "Celeron": "Una entrada directa para tareas básicas con movilidad cómoda y compra rápida.",
-        "Intel N100": "Pensada para oficina y gestión diaria con formato amplio y experiencia simple de comparar.",
-        "Core i3": "Buena elección para estudio, oficina y productividad con imagen sobria y moderna.",
-        "Core i5": "Sube de nivel con un rendimiento más sólido para oficina, estudio y multitarea real.",
-        "Core i7": "Pensada para una jornada más ágil, cómoda y fluida en oficina, clases o home office.",
-        "Ryzen 3": "Muy conveniente para quien busca movilidad, buena respuesta y almacenamiento sólido.",
+        "Celeron": "Una entrada directa para tareas basicas con movilidad comoda y compra rapida.",
+        "Intel N100": "Pensada para oficina y gestion diaria con formato amplio y experiencia simple de comparar.",
+        "Core i3": "Buena eleccion para estudio, oficina y productividad con imagen sobria y moderna.",
+        "Core i5": "Sube de nivel con un rendimiento mas solido para oficina, estudio y multitarea real.",
+        "Core i7": "Pensada para una jornada mas agil, comoda y fluida en oficina, clases o home office.",
+        "Ryzen 3": "Muy conveniente para quien busca movilidad, buena respuesta y almacenamiento solido.",
         "Ryzen 5": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
-        "Ryzen 7": "Excelente para productividad exigente con una configuración actual y muy competitiva.",
+        "Ryzen 7": "Excelente para productividad exigente con una configuracion actual y muy competitiva.",
     }
     return templates.get(processor_family, "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.")
 
 
-def build_product(item: dict, index: int) -> dict:
+def build_laptop_product(item: dict, index: int) -> dict:
     raw_title = item["title"]
     parts = [normalize_space(part) for part in raw_title.split("/") if normalize_space(part)]
     if len(parts) > 1:
@@ -356,41 +384,105 @@ def build_product(item: dict, index: int) -> dict:
         processor = clean_processor(parts[1])
         ram = extract_ram(parts[2] if len(parts) > 2 else raw_title)
         storage = extract_storage(parts[3] if len(parts) > 3 else raw_title)
-        display = extract_display(parts[4] if len(parts) > 4 else raw_title, raw_title)
+        display = extract_display(parts[4] if len(parts) > 4 else raw_title)
     else:
         brand, model = clean_model(raw_title)
         processor = clean_processor(raw_title)
-        if not processor:
-            image_name = Path(item["image"]).name.replace("-", " ").replace("_", " ")
-            processor = clean_processor(image_name)
         ram = extract_ram(raw_title)
         storage = extract_storage(raw_title)
         display = extract_display(raw_title)
+
     processor_family = normalize_processor_family(processor)
     title = f"{brand} {model} {processor} {ram} {storage} {display}".replace("  ", " ").strip()
     price = math.ceil((item["price"] + (90 if item["source"] == "pinsoft" else 70)) / 10) * 10
+
     return {
         "id": f"agn-{index:03d}",
+        "source": item["source"],
+        "category": "Laptops",
         "title": title,
-        "processor": processor.replace("AMD ", ""),
+        "processor": processor,
         "processorFamily": processor_family,
         "ram": ram,
         "storage": storage,
         "display": display,
-        "secondary": build_secondary(item["title"], processor_family, processor.replace("AMD ", ""), display),
+        "secondary": build_secondary(item["title"], processor_family, processor, display),
         "description": build_description(processor_family, item["title"]),
         "price": price,
+        "originUrl": item["url"],
+        "sourcePrice": round(float(item["price"]), 2),
     }
 
 
-def filename_for(item: dict, index: int) -> str:
-    slug = re.sub(r"[^a-z0-9]+", "-", item["title"].lower()).strip("-")
-    slug = slug[:72].rstrip("-")
-    return f"{index:02d}-{slug}.png"
+def build_aliexpress_product(item: dict) -> dict:
+    adjusted = math.ceil((float(item["price"]) + float(item["price_markup"])) / 10) * 10
+    is_projector = item["id"].startswith("ali-proj")
+
+    return {
+        "id": item["id"],
+        "source": "aliexpress",
+        "category": item["category"],
+        "title": item["title"],
+        "processor": "AliExpress",
+        "processorFamily": item["category"],
+        "ram": "-",
+        "storage": "-",
+        "display": "-",
+        "secondary": item["secondary"],
+        "description": item["description"],
+        "price": adjusted,
+        "originUrl": item["url"],
+        "sourcePrice": round(float(item["price"]), 2),
+        "priceRule": f"+{int(item['price_markup'])} y redondeo a decena superior",
+        "lumenAnsi": item.get("lumenAnsi") if is_projector else None,
+        "rawTitle": item["raw_title"],
+    }
+
+
+def filename_for(title: str, prefix: str, ext: str = "jpg") -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+    slug = slug[:70].rstrip("-")
+    return f"{prefix}-{slug}.{ext}"
+
+
+def aliexpress_image_candidates(url: str) -> list[str]:
+    if not url:
+        return []
+    candidates = [url]
+    normalized = url
+    normalized = normalized.replace("_480x480q75.jpg_.avif", "")
+    normalized = normalized.replace("_480x480.png_.avif", "")
+    normalized = normalized.replace("_640x640.jpg", "")
+    if normalized != url:
+        candidates.append(normalized)
+    return [c for c in dict.fromkeys(candidates) if c]
+
+
+def safe_existing_images() -> dict[str, str]:
+    if not JSON_PATH.exists():
+        return {}
+    try:
+        data = json.loads(JSON_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+    existing = {}
+    for item in data:
+        product_id = item.get("id")
+        image = item.get("image")
+        if not product_id or not image:
+            continue
+        if image.startswith("assets/products/"):
+            local_file = ROOT / image
+            if local_file.exists() and local_file.is_file():
+                existing[product_id] = image
+    return existing
 
 
 def main() -> None:
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+
+    old_image_by_id = safe_existing_images()
 
     pinsoft_products = []
     for url in PINSOFT_URLS:
@@ -402,11 +494,9 @@ def main() -> None:
 
     digital_products = []
     try:
-        first = parse_digital_listing(fetch_text(DIGITALPC_FIRST_PAGE))
-        digital_products.extend(first)
+        digital_products.extend(parse_digital_listing(fetch_text(DIGITALPC_FIRST_PAGE)))
     except Exception as exc:
-        print(f"Advertencia: no se pudo obtener datos de DigitalPC desde la página principal: {exc}")
-        first = []
+        print(f"Advertencia: no se pudo obtener datos de DigitalPC desde la pagina principal: {exc}")
 
     page = 2
     while len(digital_products) < 20:
@@ -422,83 +512,83 @@ def main() -> None:
         page += 1
     digital_products = digital_products[:20]
 
-    catalog = []
+    catalog: list[dict] = []
     files_to_keep = set()
-    download_stats = {"success": 0, "fallback": 0, "alternative": 0, "failed": 0}
-    
-    for index, item in enumerate(pinsoft_products + digital_products, start=1):
-        product = build_product(item, index)
-        image_name = filename_for(item, index)
-        image_path = ASSETS_DIR / image_name
-        product["image"] = f"assets/products/{image_name}"
-        files_to_keep.add(image_name)
+    stats = {"downloaded": 0, "kept_old": 0, "placeholder": 0}
 
-        # Estrategia de descarga con múltiples intentos y fallbacks
-        downloaded = False
-        brand, model = clean_model(product["title"])
-        
-        # Intento 1: Imagen grande de la fuente original
-        best_image = (
-            pinsoft_large_image(item["url"], item["image"])
-            if item["source"] == "pinsoft"
-            else digital_large_image(item["url"], item["image"])
-        )
-        if download_file(best_image, image_path):
-            download_stats["success"] += 1
-            print(f"✓ {index}: {product['title'][:50]} (desde {item['source']})")
-            downloaded = True
-        
-        # Intento 2: URL de imagen pequeña con mejor resolución
-        if not downloaded:
-            if item["source"] == "pinsoft":
-                fallback = item["image"].replace("/150x150/", "/510x510/")
+    laptop_items = pinsoft_products + digital_products
+    for index, item in enumerate(laptop_items, start=1):
+        product = build_laptop_product(item, index)
+        image_name = filename_for(product["title"], f"{index:02d}")
+        image_path = ASSETS_DIR / image_name
+
+        candidates = []
+        if item["source"] == "pinsoft":
+            candidates.append(pinsoft_large_image(item["url"], item["image"]))
+            candidates.append(item["image"].replace("/150x150/", "/510x510/"))
+        else:
+            candidates.append(digital_large_image(item["url"], item["image"]))
+        candidates.append(item["image"])
+
+        downloaded = any(download_file(candidate, image_path) for candidate in candidates if candidate)
+
+        if downloaded:
+            product["image"] = f"assets/products/{image_name}"
+            files_to_keep.add(image_name)
+            stats["downloaded"] += 1
+        else:
+            previous = old_image_by_id.get(product["id"])
+            if previous:
+                product["image"] = previous
+                files_to_keep.add(Path(previous).name)
+                stats["kept_old"] += 1
             else:
-                fallback = item["image"]
-            
-            if fallback != best_image and download_file(fallback, image_path):
-                download_stats["fallback"] += 1
-                print(f"⚠ {index}: {product['title'][:50]} (fallback de resolución)")
-                downloaded = True
-        
-        # Intento 3: Buscar imagen alternativa en otras fuentes
-        if not downloaded:
-            alt_image = search_alternative_image(brand, model)
-            if alt_image and download_file(alt_image, image_path):
-                download_stats["alternative"] += 1
-                print(f"🔄 {index}: {product['title'][:50]} (imagen alternativa)")
-                downloaded = True
-        
-        # Intento 4: URL original de thumbnail (último recurso)
-        if not downloaded and download_file(item["image"], image_path):
-            download_stats["fallback"] += 1
-            print(f"⚠ {index}: {product['title'][:50]} (thumbnail original)")
-            downloaded = True
-        
-        # Si todo falla, registrarlo pero continuar (el frontend usa placeholder)
-        if not downloaded:
-            download_stats["failed"] += 1
-            print(f"✗ {index}: {product['title'][:50]} (sin imagen, usará placeholder)")
-        
+                product["image"] = PLACEHOLDER_IMAGE
+                stats["placeholder"] += 1
+
         catalog.append(product)
 
-    # Limpiar imágenes viejas
+    for ali in ALIEXPRESS_PRODUCTS:
+        product = build_aliexpress_product(ali)
+        image_name = filename_for(product["title"], product["id"])
+        image_path = ASSETS_DIR / image_name
+
+        candidates = aliexpress_image_candidates(ali["search_image"])
+        downloaded = any(download_file(candidate, image_path) for candidate in candidates)
+
+        if downloaded:
+            product["image"] = f"assets/products/{image_name}"
+            files_to_keep.add(image_name)
+            stats["downloaded"] += 1
+        else:
+            previous = old_image_by_id.get(product["id"])
+            if previous:
+                product["image"] = previous
+                files_to_keep.add(Path(previous).name)
+                stats["kept_old"] += 1
+            else:
+                product["image"] = PLACEHOLDER_IMAGE
+                stats["placeholder"] += 1
+
+        catalog.append(product)
+
     for existing in ASSETS_DIR.glob("*"):
-        if existing.is_file() and existing.name not in files_to_keep:
+        if not existing.is_file():
+            continue
+        if existing.name.lower().endswith(".ini"):
+            continue
+        if existing.name not in files_to_keep:
             existing.unlink()
 
-    # Guardar catálogo
     JSON_PATH.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     JS_PATH.write_text("window.AGNEXUS_PRODUCTS = " + json.dumps(catalog, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
-    
-    # Resumen de descargas
-    total = sum(download_stats.values())
-    print(f"\n{'='*60}")
-    print(f"📊 Resumen de descargas:")
-    print(f"  ✓ Éxito directo: {download_stats['success']}/{total}")
-    print(f"  ⚠ Fallback resolución: {download_stats['fallback']}/{total}")
-    print(f"  🔄 Imagen alternativa: {download_stats['alternative']}/{total}")
-    print(f"  ✗ Sin imagen: {download_stats['failed']}/{total}")
-    print(f"{'='*60}")
+
+    print("=" * 60)
+    print(f"Catálogo generado: {len(catalog)} productos")
+    print(f"Imágenes descargadas: {stats['downloaded']}")
+    print(f"Imágenes conservadas del catálogo previo: {stats['kept_old']}")
+    print(f"Productos con placeholder local: {stats['placeholder']}")
+    print("=" * 60)
 
 
 if __name__ == "__main__":

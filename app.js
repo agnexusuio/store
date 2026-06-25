@@ -1,12 +1,12 @@
 const PRODUCTS = Array.isArray(window.AGNEXUS_PRODUCTS) ? window.AGNEXUS_PRODUCTS : [];
 const WHATSAPP_NUMBER = "593992217314";
 const PLACEHOLDER_IMAGE = "assets/laptop-placeholder.svg";
-const PROJECTOR_PLACEHOLDER_IMAGE = "assets/projector-placeholder.svg";
 
 const searchInput = document.querySelector("#searchInput");
 const processorFilter = document.querySelector("#processorFilter");
 const sortSelect = document.querySelector("#sortSelect");
 const productsGrid = document.querySelector("#productsGrid");
+const resultsCount = document.querySelector("#resultsCount");
 const template = document.querySelector("#productCardTemplate");
 
 const money = new Intl.NumberFormat("es-EC", {
@@ -14,6 +14,21 @@ const money = new Intl.NumberFormat("es-EC", {
   currency: "USD",
   maximumFractionDigits: 0
 });
+
+const HIDDEN_ORIGIN_WORDS = /\b(aliexpress|amazon|mercadolibre|pinsoft|digitalpc|digitalpcecuador)\b/gi;
+
+function hideOriginText(value) {
+  if (!value) {
+    return "";
+  }
+
+  return value
+    .replace(HIDDEN_ORIGIN_WORDS, "")
+    .replace(/\s*[·|,-]\s*[·|,-]*/g, " · ")
+    .replace(/^[·|,\-\s]+|[·|,\-\s]+$/g, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
 
 function buildWhatsAppUrl(product) {
   const message = `Hola, quiero cotizar la ${product.title} por ${money.format(product.price)}. ¿Está disponible?`;
@@ -43,9 +58,7 @@ function createCard(product) {
   const whatsapp = fragment.querySelector(".product-whatsapp");
 
   // Garantizar que siempre haya una imagen válida
-  // Seleccionar placeholder según categoría
-  const isProjector = (product.category && product.category === "proyectores") || (product.processorFamily && product.processorFamily.toLowerCase() === "proyector");
-  const imageUrl = product.image || (isProjector ? PROJECTOR_PLACEHOLDER_IMAGE : PLACEHOLDER_IMAGE);
+  const imageUrl = product.image || PLACEHOLDER_IMAGE;
   image.src = imageUrl;
   image.alt = product.title;
 
@@ -62,33 +75,12 @@ function createCard(product) {
     image.src = PLACEHOLDER_IMAGE;
   }
 
-  processor.textContent = product.processorFamily;
+  processor.textContent = hideOriginText(product.processorFamily);
   title.textContent = product.title;
   price.textContent = money.format(product.price);
-  specs.textContent = product.secondary;
-  description.textContent = product.description;
+  specs.textContent = hideOriginText(product.secondary);
+  description.textContent = hideOriginText(product.description);
   whatsapp.href = buildWhatsAppUrl(product);
-
-  const external = fragment.querySelector(".product-external");
-  if (external) {
-    if (product.externalLink) {
-      external.href = product.externalLink;
-      external.style.display = "inline-block";
-    } else {
-      external.style.display = "none";
-    }
-  }
-
-  // Mostrar badge si es proyector
-  const badge = fragment.querySelector('.product-badge');
-  if (badge) {
-    if (isProjector) {
-      badge.textContent = 'Proyector';
-      badge.style.display = 'inline-block';
-    } else {
-      badge.style.display = 'none';
-    }
-  }
 
   return fragment;
 }
@@ -130,11 +122,10 @@ function renderProducts() {
     });
   }
 
+  resultsCount.textContent = `${filtered.length} producto${filtered.length === 1 ? "" : "s"} disponibles`;
 }
 
 function fillProcessorFilter() {
-  // Reconstruir opciones para evitar duplicados
-  processorFilter.innerHTML = "<option value=\"all\">Todos</option>";
   const families = [...new Set(PRODUCTS.map((product) => product.processorFamily))].sort((a, b) =>
     a.localeCompare(b, "es")
   );
@@ -148,7 +139,6 @@ function fillProcessorFilter() {
 }
 
 fillProcessorFilter();
-
 searchInput.addEventListener("input", renderProducts);
 processorFilter.addEventListener("change", renderProducts);
 sortSelect.addEventListener("change", renderProducts);
