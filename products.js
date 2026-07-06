@@ -3,23 +3,6 @@ window.AGNEXUS_PRODUCTS = [
     "id": "agn-001",
     "source": "pinsoft",
     "category": "Laptops",
-    "title": "ENV 1781 Laptopt Tablet ENV Book Pro 2 en 1 8GB RAM 512GB SSD 15.6\"",
-    "processor": "Tablet ENV Book Pro 2 en 1",
-    "processorFamily": "Otros",
-    "ram": "8GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Tablet ENV Book Pro 2 en 1 · 15.6\" · Convertible 2 en 1",
-    "description": "Una opcion versatil para movilidad, clases y tareas diarias con formato tactil convertible.",
-    "price": 360,
-    "originUrl": "https://pinsoft.ec/cod-1781-laptopt-tablet-env-book-pro-2-en-1-intel-celeron-n4020-8gb-256gb-ssd-10-1-hd-ips-windows-11-wi-fi-5-ac-webcamselfie-1-9mp-post-5mp-incluye-cover-teclado-docking-espanol-gris/p-9622.html",
-    "sourcePrice": 264.0,
-    "image": "assets/products/01-env-1781-laptopt-tablet-env-book-pro-2-en-1-8gb-ram-512gb-ssd-15-6.jpg"
-  },
-  {
-    "id": "agn-002",
-    "source": "pinsoft",
-    "category": "Laptops",
     "title": "ENV Book Pro Max Intel Celeron N4020 8GB RAM 256GB SSD 15.6\"",
     "processor": "Intel Celeron N4020",
     "processorFamily": "Celeron",
@@ -31,10 +14,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 410,
     "originUrl": "https://pinsoft.ec/cod-1768-laptop-env-book-pro-max-intel-celeron-n4020-8gb-256gb-ssd-14-1-full-hd-ips-windows-11-preinstalado-wi-fi-5-ac-teclado-espanol-alfanumerico-gris-oscuro/p-9535.html",
     "sourcePrice": 313.5,
-    "image": "assets/products/02-env-book-pro-max-intel-celeron-n4020-8gb-ram-256gb-ssd-15-6.jpg"
+    "image": "assets/products/01-env-book-pro-max-intel-celeron-n4020-8gb-ram-256gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-003",
+    "id": "agn-002",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "HP 14-dq3500la Intel Celeron N4500 8GB RAM 256GB SSD 15.6\"",
@@ -48,10 +31,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 450,
     "originUrl": "https://pinsoft.ec/cod-h-1779-hp-14-dq3500la-intel-celeron-n4500-8gb-256gb-pcie-nvme-ssd-14-0-hd-wi-fi-6-bt-5-4-freedos-teclado-espanol-plateado-natural/p-9621.html",
     "sourcePrice": 352.0,
-    "image": "assets/products/03-hp-14-dq3500la-intel-celeron-n4500-8gb-ram-256gb-ssd-15-6.jpg"
+    "image": "assets/products/02-hp-14-dq3500la-intel-celeron-n4500-8gb-ram-256gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-004",
+    "id": "agn-003",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Lenovo V15 G6 ITN Intel N100 8GB RAM 256GB SSD 15.6\"",
@@ -65,10 +48,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 450,
     "originUrl": "https://pinsoft.ec/cod-1789-lenovo-v15-g6-itn-intel-n100-cache-6-mb-hasta-3-40-ghz-8gb-ddr5-256-gb-ssd-m-2-pcie-15-6-full-hd-sin-sistema-os-wi-fi-6-bt5-2-teclado-espanol-la-alfanumerico-business-black/p-9650.html",
     "sourcePrice": 352.0,
-    "image": "assets/products/04-lenovo-v15-g6-itn-intel-n100-8gb-ram-256gb-ssd-15-6.jpg"
+    "image": "assets/products/03-lenovo-v15-g6-itn-intel-n100-8gb-ram-256gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-005",
+    "id": "agn-004",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "ENV BOOK ELITE AMD Ryzen 5 3500U 8GB RAM 256GB SSD 15.6\"",
@@ -82,10 +65,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 470,
     "originUrl": "https://pinsoft.ec/cod-1780-laptop-env-book-elite-amd-ryzen-5-3500u-2-1ghzhasta-3-7ghz-8gb-256gb-nvme-ssd-15-6-full-hd-windows-11-teclado-espanol-alfanumerico-gris-oscuro/p-9623.html",
     "sourcePrice": 374.0,
-    "image": "assets/products/05-env-book-elite-amd-ryzen-5-3500u-8gb-ram-256gb-ssd-15-6.jpg"
+    "image": "assets/products/04-env-book-elite-amd-ryzen-5-3500u-8gb-ram-256gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-006",
+    "id": "agn-005",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Lenovo IdeaPad Slim 3 15AMN8 AMD Ryzen 3 7320U 8GB RAM 512GB SSD 15.6\"",
@@ -99,10 +82,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 560,
     "originUrl": "https://pinsoft.ec/cod-1791-lenovo-ideapad-slim-3-15amn8-amd-ryzen-3-7320u-8gb-lpddr5-512gb-nvme-ssd-m-2-15-6-fhd-sin-sistema-os-wi-fi6-2x2-bt5-2-teclado-espanol-alfanumerico-artic-grey/p-9675.html",
     "sourcePrice": 462.0,
-    "image": "assets/products/06-lenovo-ideapad-slim-3-15amn8-amd-ryzen-3-7320u-8gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/05-lenovo-ideapad-slim-3-15amn8-amd-ryzen-3-7320u-8gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-007",
+    "id": "agn-006",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "HP 245 G10 AMD Ryzen 3 7330U 8GB RAM 512GB SSD 15.6\"",
@@ -116,10 +99,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 560,
     "originUrl": "https://pinsoft.ec/cod-1794-hp-245-g10-amd-ryzen-3-7330u-8-gb-512gb-nvme-ssd/p-9685.html",
     "sourcePrice": 462.0,
-    "image": "assets/products/07-hp-245-g10-amd-ryzen-3-7330u-8gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/06-hp-245-g10-amd-ryzen-3-7330u-8gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-008",
+    "id": "agn-007",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Lenovo IdeaPad 1 15AMN7 AMD Ryzen 5 7520U 8GB RAM 256GB SSD 15.6\"",
@@ -133,7 +116,24 @@ window.AGNEXUS_PRODUCTS = [
     "price": 560,
     "originUrl": "https://pinsoft.ec/cod-1823-lenovo-ideapad-1-15amn7-amd-ryzen-5-7520u-8gb-lpddr5-5500-256gb-nvme-ssd-15-6-fhd-windows-11-wi-fi-6-2x2-bt5-2-teclado-ingles-alfanumerico-abyss-blue/p-9903.html",
     "sourcePrice": 462.0,
-    "image": "assets/products/08-lenovo-ideapad-1-15amn7-amd-ryzen-5-7520u-8gb-ram-256gb-ssd-15-6.jpg"
+    "image": "assets/products/07-lenovo-ideapad-1-15amn7-amd-ryzen-5-7520u-8gb-ram-256gb-ssd-15-6.jpg"
+  },
+  {
+    "id": "agn-008",
+    "source": "pinsoft",
+    "category": "Laptops",
+    "title": "ENV AMD Ryzen 5 3500U 16GB RAM 512GB SSD 15.6\"",
+    "processor": "AMD Ryzen 5 3500U",
+    "processorFamily": "Ryzen 5",
+    "ram": "16GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · AMD Ryzen 5 3500U · 15.6\" · Perfil productivo",
+    "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
+    "price": 580,
+    "originUrl": "https://pinsoft.ec/cod-e-1776-laptop-env-amd-ryzen-5-3500u-2-1ghzhasta-3-7ghz-16gb-512gb-nvme-ssd-15-6-full-hd-windows-11-teclado-espanol-alfanumerico-gris/p-9592.html",
+    "sourcePrice": 484.0,
+    "image": "assets/products/08-env-amd-ryzen-5-3500u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
     "id": "agn-009",
@@ -148,29 +148,12 @@ window.AGNEXUS_PRODUCTS = [
     "secondary": "Windows 11 · AMD Ryzen 5 3500U · 15.6\" · Perfil productivo",
     "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
     "price": 580,
-    "originUrl": "https://pinsoft.ec/cod-e-1776-laptop-env-amd-ryzen-5-3500u-2-1ghzhasta-3-7ghz-16gb-512gb-nvme-ssd-15-6-full-hd-windows-11-teclado-espanol-alfanumerico-gris/p-9592.html",
+    "originUrl": "https://pinsoft.ec/cod-1775-laptop-env-amd-ryzen-5-3500u-2-1ghzhasta-3-7ghz-16gb-512gb-nvme-ssd-14-1-full-hd-windows-11-teclado-espanol-gris/p-9593.html",
     "sourcePrice": 484.0,
     "image": "assets/products/09-env-amd-ryzen-5-3500u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
     "id": "agn-010",
-    "source": "pinsoft",
-    "category": "Laptops",
-    "title": "ENV AMD Ryzen 5 3500U 16GB RAM 512GB SSD 15.6\"",
-    "processor": "AMD Ryzen 5 3500U",
-    "processorFamily": "Ryzen 5",
-    "ram": "16GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · AMD Ryzen 5 3500U · 15.6\" · Perfil productivo",
-    "description": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
-    "price": 580,
-    "originUrl": "https://pinsoft.ec/cod-1775-laptop-env-amd-ryzen-5-3500u-2-1ghzhasta-3-7ghz-16gb-512gb-nvme-ssd-14-1-full-hd-windows-11-teclado-espanol-gris/p-9593.html",
-    "sourcePrice": 484.0,
-    "image": "assets/products/10-env-amd-ryzen-5-3500u-16gb-ram-512gb-ssd-15-6.jpg"
-  },
-  {
-    "id": "agn-011",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Asus VivoBook Go 15 (E1504F) AMD Ryzen 3 7320U 8GB RAM 512GB SSD 15.6\"",
@@ -184,10 +167,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 580,
     "originUrl": "https://pinsoft.ec/cod-1795-asus-vivobook-go-15-e1504f-amd-ryzen-37320u-8-gb-lpddr5-512gb-nvme-ssd-15-6-fhd-sin-sistema-os-wi-fi-6e-bt-5-3-lector-de-huellas-teclado-espanol-alfanumerico-mixed-black-incl-mouseasus/p-9701.html",
     "sourcePrice": 489.5,
-    "image": "assets/products/11-asus-vivobook-go-15-e1504f-amd-ryzen-3-7320u-8gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/10-asus-vivobook-go-15-e1504f-amd-ryzen-3-7320u-8gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-012",
+    "id": "agn-011",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Asus VivoBook 15 X1504V Intel Core i3-1315U 8GB RAM 512GB SSD 15.6\"",
@@ -201,10 +184,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 610,
     "originUrl": "https://pinsoft.ec/cod-1766-kit-asus-vivobook-15-x1504v-intel-corei3-1315u-13va-gen-10mb-cache-hasta-4-4-ghz-8gb-512gb-nvme-ssd-15-6-fhd/p-9534.html",
     "sourcePrice": 517.0,
-    "image": "assets/products/12-asus-vivobook-15-x1504v-intel-core-i3-1315u-8gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/11-asus-vivobook-15-x1504v-intel-core-i3-1315u-8gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-013",
+    "id": "agn-012",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Lenovo IdeaPad Slim 3 15IAN8 Intel Core i3-N305 8GB RAM 512GB SSD 15.6\"",
@@ -218,10 +201,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 610,
     "originUrl": "https://pinsoft.ec/cod-1787-lenovo-ideapad-slim-3-15ian8-intel-core-i3-n305-8-nucleos-hasta-3-8-ghz-8gb-lpddr5-512gb-ssd-pcie-4-0-15-6-full-hd-sin-sistema-os-wi-fi-6-bt5-2-teclado-espanol-la-alfanumerico-arctic-grey/p-9649.html",
     "sourcePrice": 517.0,
-    "image": "assets/products/13-lenovo-ideapad-slim-3-15ian8-intel-core-i3-n305-8gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/12-lenovo-ideapad-slim-3-15ian8-intel-core-i3-n305-8gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-014",
+    "id": "agn-013",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Asus VivoBook 15 X1504V Intel Core i3-1315U 16GB RAM 512GB SSD 15.6\"",
@@ -235,10 +218,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 660,
     "originUrl": "https://pinsoft.ec/cod-1774-kit-asus-vivobook-15-x1504v-intel-corei3-1315u-13va-gen-10mb-cache-hasta-4-4-ghz-16gb-512gb-nvme/p-9588.html",
     "sourcePrice": 566.5,
-    "image": "assets/products/14-asus-vivobook-15-x1504v-intel-core-i3-1315u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/13-asus-vivobook-15-x1504v-intel-core-i3-1315u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-015",
+    "id": "agn-014",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Lenovo V15 G5 IRL Intel Core i5-13420H 8GB RAM 512GB SSD 15.6\"",
@@ -252,10 +235,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 670,
     "originUrl": "https://pinsoft.ec/cod-1793-lenovo-v15-g5-irl-intel-core-i5-13420h-13va-gen-8gb-ddr5-512gb-ssd-pcie-4-0-15-6-full-hd-sin-sistema-os-wi-fi-6-ax-teclado-alfanumerico-espanol-la-luna-grey/p-9681.html",
     "sourcePrice": 577.5,
-    "image": "assets/products/15-lenovo-v15-g5-irl-intel-core-i5-13420h-8gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/14-lenovo-v15-g5-irl-intel-core-i5-13420h-8gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-016",
+    "id": "agn-015",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Asus VivoBook 15 X1504V Intel Core 5 120U Última Generación 8GB RAM 512GB SSD 15.6\"",
@@ -269,10 +252,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 670,
     "originUrl": "https://pinsoft.ec/cod-1797-asus-vivobook-15-x1504v-intel-core-5-120u-10-nucleos-hasta-5-0ghz-8gb-512gb-nvme-ssd-15-6-fhd-sin-sistema-os-wi-fi-6-bt-5-3-sensor-de-huella-teclado-espanol-alfanumerico-quiet-blue-mouseasus/p-9729.html",
     "sourcePrice": 577.5,
-    "image": "assets/products/16-asus-vivobook-15-x1504v-intel-core-5-120u-ltima-generaci-n-8gb-ram-512.jpg"
+    "image": "assets/products/15-asus-vivobook-15-x1504v-intel-core-5-120u-ltima-generaci-n-8gb-ram-512.jpg"
   },
   {
-    "id": "agn-017",
+    "id": "agn-016",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Asus VivoBook 15 M1502YA AMD Ryzen 7 5825U 8GB RAM 512GB SSD 15.6\"",
@@ -286,10 +269,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 690,
     "originUrl": "https://pinsoft.ec/cod-1805-asus-vivobook-15-m1502ya-amd-ryzen-7-5825u-8-nucleos-16-subprocesos-16mb-cache-l3-8gb-512-tb-nvme-ssd-15-6-fhd-sin-sistema-os-wi-fi-6e-bt-5-3-teclado-espanol-alfanumerico-cool-silver-incl-mouseasus/p-9787.html",
     "sourcePrice": 594.0,
-    "image": "assets/products/17-asus-vivobook-15-m1502ya-amd-ryzen-7-5825u-8gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/16-asus-vivobook-15-m1502ya-amd-ryzen-7-5825u-8gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-018",
+    "id": "agn-017",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "Asus VivoBook 15 X1504V Intel Core 5 120U Última Generación 16GB RAM 512GB SSD 15.6\"",
@@ -303,10 +286,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 690,
     "originUrl": "https://pinsoft.ec/cod-1817-asus-vivobook-15-x1504v-intel-core-5-120u-serie-1-/p-9870.html",
     "sourcePrice": 594.0,
-    "image": "assets/products/18-asus-vivobook-15-x1504v-intel-core-5-120u-ltima-generaci-n-16gb-ram-51.jpg"
+    "image": "assets/products/17-asus-vivobook-15-x1504v-intel-core-5-120u-ltima-generaci-n-16gb-ram-51.jpg"
   },
   {
-    "id": "agn-019",
+    "id": "agn-018",
     "source": "pinsoft",
     "category": "Laptops",
     "title": "DELL 15 DC15250 Intel Core i5-1334U 8GB RAM 512GB SSD 15.6\"",
@@ -319,6 +302,23 @@ window.AGNEXUS_PRODUCTS = [
     "description": "Sube de nivel con un rendimiento mas solido para oficina, estudio y multitarea real.",
     "price": 700,
     "originUrl": "https://pinsoft.ec/cod-1802-dell-15-dc15250-intel-core-i5-1334u-13-gen-8gb-512gb-nvme-ssd-15-6-full-hd-120hz-ubuntu-wi-fi-6-ax-teclado-espanol-alfanumerico-platinum-silver/p-9766.html",
+    "sourcePrice": 605.0,
+    "image": "assets/products/18-dell-15-dc15250-intel-core-i5-1334u-8gb-ram-512gb-ssd-15-6.jpg"
+  },
+  {
+    "id": "agn-019",
+    "source": "pinsoft",
+    "category": "Laptops",
+    "title": "DELL 15 DC15250 Intel Core i5-1334U 8GB RAM 512GB SSD 15.6\"",
+    "processor": "Intel Core i5-1334U",
+    "processorFamily": "Core i5",
+    "ram": "8GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · Intel Core i5-1334U · 15.6\" · Perfil productivo",
+    "description": "Sube de nivel con un rendimiento mas solido para oficina, estudio y multitarea real.",
+    "price": 700,
+    "originUrl": "https://pinsoft.ec/cod-1827-dell-15-dc15250-intel-core-i5-1334u-13-gen-8gb-512gb-nvme-ssd-15-6-1920x1080-full-hd-tactil-windows-11-home-s-wi-fi-6-ax-teclado-ingles-alfanumerico-carbon-black/p-9904.html",
     "sourcePrice": 605.0,
     "image": "assets/products/19-dell-15-dc15250-intel-core-i5-1334u-8gb-ram-512gb-ssd-15-6.jpg"
   },
@@ -513,23 +513,6 @@ window.AGNEXUS_PRODUCTS = [
     "id": "agn-031",
     "source": "digitalpc",
     "category": "Laptops",
-    "title": "Lenovo V15 G5 Intel Core I5-13420H 16GB RAM 512GB SSD 15.6\"",
-    "processor": "Intel Core I5-13420H",
-    "processorFamily": "Core i5",
-    "ram": "16GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Intel Core I5-13420H · 15.6\" · Perfil productivo",
-    "description": "Sube de nivel con un rendimiento mas solido para oficina, estudio y multitarea real.",
-    "price": 820,
-    "originUrl": "https://digitalpcecuador.com/producto/lenovo-v15-g5-intel-core-i5-13420h-16gb-ram-512gb-ssd-15-6/",
-    "sourcePrice": 745.0,
-    "image": "assets/products/31-lenovo-v15-g5-intel-core-i5-13420h-16gb-ram-512gb-ssd-15-6.jpg"
-  },
-  {
-    "id": "agn-032",
-    "source": "digitalpc",
-    "category": "Laptops",
     "title": "Asus VIVOBOOK M1607KA ASUS VIVOBOOK M1607KA AMD Ryzen AI 5 330 16gb RAM 512gb SSD 16” WUXGA W11 16GB RAM 512GB SSD 15.6\"",
     "processor": "ASUS VIVOBOOK M1607KA AMD Ryzen AI 5 330 16gb RAM 512gb SSD 16” WUXGA W11",
     "processorFamily": "Otros",
@@ -541,10 +524,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 820,
     "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-m1607ka-amd-ryzen-ai-5-330-16gb-ram-512gb-ssd-16-wuxga-w11/",
     "sourcePrice": 745.0,
-    "image": "assets/products/32-asus-vivobook-m1607ka-asus-vivobook-m1607ka-amd-ryzen-ai-5-330-16gb-ra.jpg"
+    "image": "assets/products/31-asus-vivobook-m1607ka-asus-vivobook-m1607ka-amd-ryzen-ai-5-330-16gb-ra.jpg"
   },
   {
-    "id": "agn-033",
+    "id": "agn-032",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Asus VIVOBOOK 15 F1504VAP ASUS VIVOBOOK 15 F1504VAP Intel Core 5 120U 16gb RAM 512gb SSD 15.6” W11 16GB RAM 512GB SSD 15.6\"",
@@ -558,10 +541,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 830,
     "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-15-f1504vap-intel-core-5-120u-16gb-ram-512gb-ssd-15-6-w11/",
     "sourcePrice": 755.0,
-    "image": "assets/products/33-asus-vivobook-15-f1504vap-asus-vivobook-15-f1504vap-intel-core-5-120u.jpg"
+    "image": "assets/products/32-asus-vivobook-15-f1504vap-asus-vivobook-15-f1504vap-intel-core-5-120u.jpg"
   },
   {
-    "id": "agn-034",
+    "id": "agn-033",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Asus VIVOBOOK 14 X1404VA Intel Core I7-1355U 12GB RAM 512GB SSD 15.6\"",
@@ -575,10 +558,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 840,
     "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-14-x1404va-intel-core-i7-1355u-12gb-ram-512gb-ssd-14-w11/",
     "sourcePrice": 765.0,
-    "image": "assets/products/34-asus-vivobook-14-x1404va-intel-core-i7-1355u-12gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/33-asus-vivobook-14-x1404va-intel-core-i7-1355u-12gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-035",
+    "id": "agn-034",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Lenovo V15 G4 AMD Ryzen 7-7730U 16GB RAM 512GB SSD 15.6\"",
@@ -592,10 +575,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 840,
     "originUrl": "https://digitalpcecuador.com/producto/lenovo-v15-g4-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6/",
     "sourcePrice": 765.0,
-    "image": "assets/products/35-lenovo-v15-g4-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/34-lenovo-v15-g4-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-036",
+    "id": "agn-035",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "HP 15-fc0057wm AMD Ryzen 7-7730U 16GB RAM 512GB SSD 15.6\"",
@@ -609,27 +592,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 850,
     "originUrl": "https://digitalpcecuador.com/producto/hp-15-fc0057wm-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6-touch-w11/",
     "sourcePrice": 775.0,
-    "image": "assets/products/36-hp-15-fc0057wm-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/35-hp-15-fc0057wm-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-037",
-    "source": "digitalpc",
-    "category": "Laptops",
-    "title": "Lenovo V15 G4 AMD Ryzen 7-7730U 16GB RAM 1TB SSD 15.6\"",
-    "processor": "AMD Ryzen 7-7730U",
-    "processorFamily": "Ryzen 7",
-    "ram": "16GB RAM",
-    "storage": "1TB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · AMD Ryzen 7-7730U · 15.6\" · Chip Ryzen 7",
-    "description": "Excelente para productividad exigente con una configuracion actual y muy competitiva.",
-    "price": 870,
-    "originUrl": "https://digitalpcecuador.com/producto/lenovo-v15-g4-amd-ryzen-7-7730u-16gb-ram-1tb-ssd-15-6/",
-    "sourcePrice": 795.0,
-    "image": "assets/products/37-lenovo-v15-g4-amd-ryzen-7-7730u-16gb-ram-1tb-ssd-15-6.jpg"
-  },
-  {
-    "id": "agn-038",
+    "id": "agn-036",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Asus VIVOBOOK 14 X1404VA Intel Core I7-1355U 16GB RAM 512GB SSD 15.6\"",
@@ -643,10 +609,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 900,
     "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-14-x1404va-intel-core-i7-1355u-16gb-ram-512gb-ssd-14-w11/",
     "sourcePrice": 825.0,
-    "image": "assets/products/38-asus-vivobook-14-x1404va-intel-core-i7-1355u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/36-asus-vivobook-14-x1404va-intel-core-i7-1355u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-039",
+    "id": "agn-037",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "HP 15-FD0276LA Intel Core I7-1355U 16GB RAM 512GB SSD 15.6\"",
@@ -660,10 +626,10 @@ window.AGNEXUS_PRODUCTS = [
     "price": 920,
     "originUrl": "https://digitalpcecuador.com/producto/hp-15-fd0276la-intel-core-i7-1355u-16gb-ram-512gb-ssd-15-6/",
     "sourcePrice": 845.0,
-    "image": "assets/products/39-hp-15-fd0276la-intel-core-i7-1355u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/37-hp-15-fd0276la-intel-core-i7-1355u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-040",
+    "id": "agn-038",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "DELL 15 DC15250 Intel Core I7-1355U 16GB RAM 512GB SSD 15.6\"",
@@ -677,7 +643,41 @@ window.AGNEXUS_PRODUCTS = [
     "price": 920,
     "originUrl": "https://digitalpcecuador.com/producto/dell-15-dc15250-intel-core-i7-1355u-16gb-ram-512gb-ssd-15-6/",
     "sourcePrice": 845.0,
-    "image": "assets/products/40-dell-15-dc15250-intel-core-i7-1355u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/38-dell-15-dc15250-intel-core-i7-1355u-16gb-ram-512gb-ssd-15-6.jpg"
+  },
+  {
+    "id": "agn-039",
+    "source": "digitalpc",
+    "category": "Laptops",
+    "title": "Asus VIVOBOOK F1605VA Intel Core I7-1355U 16GB RAM 512GB SSD 15.6\"",
+    "processor": "Intel Core I7-1355U",
+    "processorFamily": "Core i7",
+    "ram": "16GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · Intel Core I7-1355U · 15.6\" · Perfil productivo",
+    "description": "Pensada para una jornada mas agil, comoda y fluida en oficina, clases o home office.",
+    "price": 920,
+    "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-f1605va-intel-core-i7-1355u-16gb-ram-512gb-ssd-16-wuxga-w11/",
+    "sourcePrice": 845.0,
+    "image": "assets/products/39-asus-vivobook-f1605va-intel-core-i7-1355u-16gb-ram-512gb-ssd-15-6.jpg"
+  },
+  {
+    "id": "agn-040",
+    "source": "digitalpc",
+    "category": "Laptops",
+    "title": "Asus VIVOBOOK 15 X1502VA Intel Core I7-13620H 16GB RAM 512GB SSD 15.6\"",
+    "processor": "Intel Core I7-13620H",
+    "processorFamily": "Core i7",
+    "ram": "16GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · Intel Core I7-13620H · 15.6\" · Perfil productivo",
+    "description": "Pensada para una jornada mas agil, comoda y fluida en oficina, clases o home office.",
+    "price": 950,
+    "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-15-x1502va-intel-core-i7-13620h-16gb-ram-512gb-ssd-15-6-2/",
+    "sourcePrice": 875.0,
+    "image": "assets/products/40-asus-vivobook-15-x1502va-intel-core-i7-13620h-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
     "id": "ali-proj-001",
