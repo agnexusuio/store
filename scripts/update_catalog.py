@@ -24,8 +24,13 @@ PINSOFT_URLS = [
     "https://pinsoft.ec/laptop-notebook-portatiles/c-67.html?page=2",
 ]
 
-DIGITALPC_URL_TEMPLATE = "https://digitalpcecuador.com/categoria-producto/laptops/page/{page}/?orderby=price"
-DIGITALPC_FIRST_PAGE = "https://digitalpcecuador.com/categoria-producto/laptops/?orderby=price"
+DIGITALPC_URL_TEMPLATE = (
+    "https://digitalpcecuador.com/categoria-producto/laptops/page/{page}/"
+    "?orderby=price"
+)
+DIGITALPC_FIRST_PAGE = (
+    "https://digitalpcecuador.com/categoria-producto/laptops/" "?orderby=price"
+)
 
 # Datos reales extraidos de listados de AliExpress (2026-06-24/25)
 ALIEXPRESS_PRODUCTS = [
@@ -34,81 +39,134 @@ ALIEXPRESS_PRODUCTS = [
         "category": "Proyectores ANSI",
         "source": "aliexpress",
         "title": "Proyector Touyinger Z7 Linux HDR10+ 1080P 4K 1200 ANSI",
-        "raw_title": "Proyector Touyinger Z7 con Sistema Linux, HDR10+, Full HD 1080P, Compatible con 4K, 1200 ANSI Lumenes, Enfoque Automatico, Portatil, para Interiores y Exteriores, Proyector Inteligente",
+        "raw_title": (
+            "Proyector Touyinger Z7 con Sistema Linux, HDR10+, Full HD 1080P, "
+            "Compatible con 4K, 1200 ANSI Lumenes, Enfoque Automatico, Portatil, "
+            "para Interiores y Exteriores, Proyector Inteligente"
+        ),
         "url": "https://es.aliexpress.com/item/1005012344223283.html",
-        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/S3d7a3131d4b843dfa04c911f6f0a4d4cY.jpg_480x480q75.jpg_.avif",
+        "search_image": (
+            "https://ae-pic-a1.aliexpress-media.com/kf/S3d7a3131d4b843dfa04c911f6f0a4d4cY"
+            ".jpg_480x480q75.jpg_.avif"
+        ),
         "price": 149.57,
         "lumenAnsi": 1200,
         "price_markup": 110,
         "secondary": "AliExpress · 1200 ANSI lumenes · Linux/HDR10+ · 1080P nativo",
-        "description": "Proyector con alto brillo ANSI para cine en casa y presentaciones con buena luz ambiental.",
+        "description": (
+            "Proyector con alto brillo ANSI para cine en casa y presentaciones con "
+            "buena luz ambiental."
+        ),
     },
     {
         "id": "ali-proj-002",
         "category": "Proyectores ANSI",
         "source": "aliexpress",
         "title": "Proyector Touyinger Z7 1080P 4K 1200 ANSI Smart TV",
-        "raw_title": "Proyector Touyinger Z7 1080P HD 4K Smart TV 1200 ANSI Lumenes, Proyector de Video para Cine en Casa con Soporte de 360 Mini Beam",
+        "raw_title": (
+            "Proyector Touyinger Z7 1080P HD 4K Smart TV 1200 ANSI Lumenes, "
+            "Proyector de Video para Cine en Casa con Soporte de 360 Mini Beam"
+        ),
         "url": "https://es.aliexpress.com/item/1005011624160042.html",
-        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/See38149f0e58495390fda92645d35231z.jpg_480x480q75.jpg_.avif",
+        "search_image": (
+            "https://ae-pic-a1.aliexpress-media.com/kf/See38149f0e58495390fda92645d35231z"
+            ".jpg_480x480q75.jpg_.avif"
+        ),
         "price": 137.13,
         "lumenAnsi": 1200,
         "price_markup": 110,
         "secondary": "AliExpress · 1200 ANSI lumenes · Smart TV · Soporte 360",
-        "description": "Modelo compacto de alto brillo ANSI con enfoque en cine en casa y uso flexible.",
+        "description": (
+            "Modelo compacto de alto brillo ANSI con enfoque en cine en casa "
+            "y uso flexible."
+        ),
     },
     {
         "id": "ali-proj-003",
         "category": "Proyectores ANSI",
         "source": "aliexpress",
         "title": "Proyector Touyinger L9W Ultra 4K 1080P 1000 ANSI",
-        "raw_title": "Proyector Touyinger L9W Ultra, Compatible con 4K 1080P, 2G+32G, 1000 ANSI, Enfoque Automatico y Correccion Trapezoidal, Wifi6, BT, Cine en Casa",
+        "raw_title": (
+            "Proyector Touyinger L9W Ultra, Compatible con 4K 1080P, 2G+32G, 1000 ANSI, "
+            "Enfoque Automatico y Correccion Trapezoidal, Wifi6, BT, Cine en Casa"
+        ),
         "url": "https://es.aliexpress.com/item/1005012325397628.html",
-        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/Sdaef64660af24482985388598ed7d453X.jpg_480x480q75.jpg_.avif",
+        "search_image": (
+            "https://ae-pic-a1.aliexpress-media.com/kf/Sdaef64660af24482985388598ed7d453X"
+            ".jpg_480x480q75.jpg_.avif"
+        ),
         "price": 115.112,
         "lumenAnsi": 1000,
         "price_markup": 110,
         "secondary": "AliExpress · 1000 ANSI lumenes · Enfoque automatico · Wifi6/BT",
-        "description": "Proyector de 1000 ANSI con conectividad moderna para entretenimiento y productividad.",
+        "description": (
+            "Proyector de 1000 ANSI con conectividad moderna para entretenimiento "
+            "y productividad."
+        ),
     },
     {
         "id": "ali-gls-001",
         "category": "Gafas IA",
         "source": "aliexpress",
         "title": "Gafas Lenovo IA 8K HD con traduccion en tiempo real",
-        "raw_title": "Gafas Inteligentes Lenovo 8K HD con IA, Camara de 1600W, Traduccion en Tiempo Real, Llamadas Bluetooth, Grabacion de Audio y Video, Reproduccion de Musica, Gafas de Sol 2026",
+        "raw_title": (
+            "Gafas Inteligentes Lenovo 8K HD con IA, Camara de 1600W, Traduccion en "
+            "Tiempo Real, Llamadas Bluetooth, Grabacion de Audio y Video, Reproduccion "
+            "de Musica, Gafas de Sol 2026"
+        ),
         "url": "https://es.aliexpress.com/item/1005012432973677.html",
-        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/S4b9441a4833f48d5adb0364234ab0c8fu.jpg_480x480q75.jpg_.avif",
+        "search_image": (
+            "https://ae-pic-a1.aliexpress-media.com/kf/S4b9441a4833f48d5adb0364234ab0c8fu"
+            ".jpg_480x480q75.jpg_.avif"
+        ),
         "price": 38.53,
         "price_markup": 70,
         "secondary": "AliExpress · Traduccion en tiempo real · Bluetooth · Camara integrada",
-        "description": "Gafas inteligentes orientadas a traduccion de idiomas, llamadas y grabacion ligera.",
+        "description": (
+            "Gafas inteligentes orientadas a traduccion de idiomas, llamadas y grabacion ligera."
+        ),
     },
     {
         "id": "ali-gls-002",
         "category": "Gafas IA",
         "source": "aliexpress",
         "title": "Gafas Xiaomi IA 8K HD con traduccion y dialogo",
-        "raw_title": "Gafas Inteligentes Xiaomi con IA, Camara 8K HD, Luz LED, Traduccion, Dialogo, Grabacion de Video, Gafas de Sol Deportivas para Exteriores, Novedad 2026",
+        "raw_title": (
+            "Gafas Inteligentes Xiaomi con IA, Camara 8K HD, Luz LED, Traduccion, Dialogo, Grabacion "
+            "de Video, Gafas de Sol Deportivas para Exteriores, Novedad 2026"
+        ),
         "url": "https://es.aliexpress.com/item/1005012242662688.html",
-        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/S03a2e1dbed874755bbd5413769ae0973q.jpg_480x480q75.jpg_.avif",
+        "search_image": (
+            "https://ae-pic-a1.aliexpress-media.com/kf/S03a2e1dbed874755bbd5413769ae0973q"
+            ".jpg_480x480q75.jpg_.avif"
+        ),
         "price": 32.09,
         "price_markup": 70,
         "secondary": "AliExpress · Traduccion y dialogo IA · Camara 8K HD · Luz LED",
-        "description": "Gafas de traduccion IA pensadas para viajes y uso diario con funciones multimedia.",
+        "description": (
+            "Gafas de traduccion IA pensadas para viajes y uso diario con funciones multimedia."
+        ),
     },
     {
         "id": "ali-gls-003",
         "category": "Gafas IA",
         "source": "aliexpress",
         "title": "Gafas IA con traduccion, bluetooth y control tactil",
-        "raw_title": "Gafas Inteligentes con Traduccion IA, Lentes con Cambio de Color y Control Bluetooth, Llamadas Bluetooth, Gafas Inteligentes con IA",
+        "raw_title": (
+            "Gafas Inteligentes con Traduccion IA, Lentes con Cambio de Color y Control Bluetooth, "
+            "Llamadas Bluetooth, Gafas Inteligentes con IA"
+        ),
         "url": "https://es.aliexpress.com/item/1005011803378382.html",
-        "search_image": "https://ae-pic-a1.aliexpress-media.com/kf/Scb4e9678124b481a972e179480be4741x.jpg_480x480q75.jpg_.avif",
+        "search_image": (
+            "https://ae-pic-a1.aliexpress-media.com/kf/Scb4e9678124b481a972e179480be4741x"
+            ".jpg_480x480q75.jpg_.avif"
+        ),
         "price": 26.35,
         "price_markup": 70,
         "secondary": "AliExpress · Traduccion IA · Control Bluetooth · Lentes fotocromaticos",
-        "description": "Opcion accesible de gafas inteligentes con traduccion y funciones de conectividad.",
+        "description": (
+            "Opcion accesible de gafas inteligentes con traduccion y funciones de conectividad."
+        ),
     },
 ]
 
@@ -161,10 +219,16 @@ def normalize_space(value: str) -> str:
 
 def parse_pinsoft_listing(page_html: str) -> list[dict]:
     products = []
-    chunks = page_html.split('<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-6 col_product">')
+    chunks = page_html.split(
+        '<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-6 col_product">'
+    )
     for chunk in chunks:
-        url_match = re.search(r'<a class="p_img_href\s+not-slider" href="([^"]+)"', chunk)
-        title_match = re.search(r'<a href="[^"]+" class="model_product">(.*?)</a>', chunk, re.S)
+        url_match = re.search(
+            r'<a class="p_img_href\s+not-slider" href="([^"]+)"', chunk
+        )
+        title_match = re.search(
+            r'<a href="[^"]+" class="model_product">(.*?)</a>', chunk, re.S
+        )
         image_match = re.search(r'data-src="([^"]+)"', chunk)
         price_match = re.search(r'<span class="ccp">\$</span>([\d.]+)', chunk)
         if not all([url_match, title_match, image_match, price_match]):
@@ -174,7 +238,9 @@ def parse_pinsoft_listing(page_html: str) -> list[dict]:
                 "source": "pinsoft",
                 "url": urllib.parse.urljoin("https://pinsoft.ec/", url_match.group(1)),
                 "title": normalize_space(title_match.group(1)),
-                "image": urllib.parse.urljoin("https://pinsoft.ec/", image_match.group(1)),
+                "image": urllib.parse.urljoin(
+                    "https://pinsoft.ec/", image_match.group(1)
+                ),
                 "price": float(price_match.group(1)),
             }
         )
@@ -186,7 +252,11 @@ def parse_digital_listing(page_html: str) -> list[dict]:
     chunks = page_html.split('<div class="product-grid">')
     for chunk in chunks:
         url_match = re.search(r'<a class="product-image" href="([^"]+)"', chunk)
-        title_match = re.search(r'<a class="product-name" href="[^"]+">\s*(.*?)\s*<span class="price">', chunk, re.S)
+        title_match = re.search(
+            r'<a class="product-name" href="[^"]+">\s*(.*?)\s*<span class="price">',
+            chunk,
+            re.S,
+        )
         image_match = re.search(r'data-original="([^"]+)"', chunk)
         price_match = re.search(r'<span class="price">.*?\$([\d.,]+)', chunk, re.S)
         if not all([url_match, title_match, image_match, price_match]):
@@ -257,7 +327,9 @@ def normalize_display_value(value: str) -> str:
 
 
 def extract_display_from_text(text: str) -> str | None:
-    match = re.search(r"(\d{1,2}(?:[.,]\d)?)\s*(?:\"|”|pulgadas|inch|inches)\b", text, flags=re.I)
+    match = re.search(
+        r"(\d{1,2}(?:[.,]\d)?)\s*(?:\"|”|pulgadas|inch|inches)\b", text, flags=re.I
+    )
     return normalize_display_value(match.group(1)) if match else None
 
 
@@ -275,7 +347,9 @@ def extract_display(segment: str, fallback_text: str | None = None) -> str:
 
 def extract_storage(segment: str) -> str:
     segment = segment.upper().replace(" TB ", "GB ").replace("512 TB", "512GB")
-    segment = segment.replace("NVME", "SSD").replace("PCIE", "").replace("M.2", "").strip()
+    segment = (
+        segment.replace("NVME", "SSD").replace("PCIE", "").replace("M.2", "").strip()
+    )
     match = re.search(r"(128|256|512|1TB)\s*GB?|1\s*TB", segment)
     if "1 TB" in segment or "1TB" in segment:
         return "1TB SSD"
@@ -324,7 +398,14 @@ def clean_model(segment: str) -> tuple[str, str]:
     segment = re.sub(r"^Cod(?:igo)?[^ ]*\s*", "", segment, flags=re.I)
     segment = re.sub(r"^(Laptop|Laptopt/Tablet|Kit)\s+", "", segment, flags=re.I)
 
-    brand = next((item for item in BRANDS if re.search(rf"\b{re.escape(item)}\b", segment, flags=re.I)), None)
+    brand = next(
+        (
+            item
+            for item in BRANDS
+            if re.search(rf"\b{re.escape(item)}\b", segment, flags=re.I)
+        ),
+        None,
+    )
     if not brand and re.search(r"\bENV\b", segment, flags=re.I):
         brand = "ENV"
     if not brand:
@@ -341,7 +422,9 @@ def clean_model(segment: str) -> tuple[str, str]:
     return brand, model
 
 
-def build_secondary(raw_title: str, processor_family: str, processor: str, display: str) -> str:
+def build_secondary(
+    raw_title: str, processor_family: str, processor: str, display: str
+) -> str:
     raw = raw_title.lower()
     parts = ["Windows 11", processor, display]
     if "2 en 1" in raw or "docking" in raw:
@@ -373,12 +456,17 @@ def build_description(processor_family: str, raw_title: str) -> str:
         "Ryzen 5": "Una base equilibrada para productividad diaria, clases y trabajo con buena fluidez.",
         "Ryzen 7": "Excelente para productividad exigente con una configuracion actual y muy competitiva.",
     }
-    return templates.get(processor_family, "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.")
+    return templates.get(
+        processor_family,
+        "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.",
+    )
 
 
 def build_laptop_product(item: dict, index: int) -> dict:
     raw_title = item["title"]
-    parts = [normalize_space(part) for part in raw_title.split("/") if normalize_space(part)]
+    parts = [
+        normalize_space(part) for part in raw_title.split("/") if normalize_space(part)
+    ]
     if len(parts) > 1:
         brand, model = clean_model(parts[0])
         processor = clean_processor(parts[1])
@@ -393,8 +481,13 @@ def build_laptop_product(item: dict, index: int) -> dict:
         display = extract_display(raw_title)
 
     processor_family = normalize_processor_family(processor)
-    title = f"{brand} {model} {processor} {ram} {storage} {display}".replace("  ", " ").strip()
-    price = math.ceil((item["price"] + (90 if item["source"] == "pinsoft" else 70)) / 10) * 10
+    title = f"{brand} {model} {processor} {ram} {storage} {display}".replace(
+        "  ", " "
+    ).strip()
+    price = (
+        math.ceil((item["price"] + (90 if item["source"] == "pinsoft" else 70)) / 10)
+        * 10
+    )
 
     return {
         "id": f"agn-{index:03d}",
@@ -406,7 +499,9 @@ def build_laptop_product(item: dict, index: int) -> dict:
         "ram": ram,
         "storage": storage,
         "display": display,
-        "secondary": build_secondary(item["title"], processor_family, processor, display),
+        "secondary": build_secondary(
+            item["title"], processor_family, processor, display
+        ),
         "description": build_description(processor_family, item["title"]),
         "price": price,
         "originUrl": item["url"],
@@ -489,14 +584,18 @@ def main() -> None:
         try:
             pinsoft_products.extend(parse_pinsoft_listing(fetch_text(url)))
         except Exception as exc:
-            print(f"Advertencia: no se pudo obtener datos de Pinsoft desde {url}: {exc}")
+            print(
+                f"Advertencia: no se pudo obtener datos de Pinsoft desde {url}: {exc}"
+            )
     pinsoft_products = sorted(pinsoft_products, key=lambda item: item["price"])[:20]
 
     digital_products = []
     try:
         digital_products.extend(parse_digital_listing(fetch_text(DIGITALPC_FIRST_PAGE)))
     except Exception as exc:
-        print(f"Advertencia: no se pudo obtener datos de DigitalPC desde la pagina principal: {exc}")
+        print(
+            f"Advertencia: no se pudo obtener datos de DigitalPC desde la pagina principal: {exc}"
+        )
 
     page = 2
     while len(digital_products) < 20:
@@ -504,7 +603,9 @@ def main() -> None:
         try:
             items = parse_digital_listing(fetch_text(url))
         except Exception as exc:
-            print(f"Advertencia: no se pudo obtener datos de DigitalPC desde {url}: {exc}")
+            print(
+                f"Advertencia: no se pudo obtener datos de DigitalPC desde {url}: {exc}"
+            )
             break
         if not items:
             break
@@ -530,7 +631,11 @@ def main() -> None:
             candidates.append(digital_large_image(item["url"], item["image"]))
         candidates.append(item["image"])
 
-        downloaded = any(download_file(candidate, image_path) for candidate in candidates if candidate)
+        downloaded = any(
+            download_file(candidate, image_path)
+            for candidate in candidates
+            if candidate
+        )
 
         if downloaded:
             product["image"] = f"assets/products/{image_name}"
@@ -554,7 +659,9 @@ def main() -> None:
         image_path = ASSETS_DIR / image_name
 
         candidates = aliexpress_image_candidates(ali["search_image"])
-        downloaded = any(download_file(candidate, image_path) for candidate in candidates)
+        downloaded = any(
+            download_file(candidate, image_path) for candidate in candidates
+        )
 
         if downloaded:
             product["image"] = f"assets/products/{image_name}"
@@ -580,8 +687,15 @@ def main() -> None:
         if existing.name not in files_to_keep:
             existing.unlink()
 
-    JSON_PATH.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    JS_PATH.write_text("window.AGNEXUS_PRODUCTS = " + json.dumps(catalog, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
+    JSON_PATH.write_text(
+        json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    JS_PATH.write_text(
+        "window.AGNEXUS_PRODUCTS = "
+        + json.dumps(catalog, ensure_ascii=False, indent=2)
+        + ";\n",
+        encoding="utf-8",
+    )
 
     print("=" * 60)
     print(f"Catálogo generado: {len(catalog)} productos")
