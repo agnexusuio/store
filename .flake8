@@ -1,0 +1,8 @@
+[flake8]
+max-line-length = 88
+extend-ignore = E203, W503
+exclude = .git,__pycache__,build,dist,venv
+
+# Ignore long-line (E501) only for the large scraper script where breaking strings is noisy
+per-file-ignores =
+    scripts/update_catalog.py:E501

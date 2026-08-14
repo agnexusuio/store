@@ -1,0 +1,52 @@
+name: Actualizar catálogo de productos
+
+on:
+  schedule:
+    # Runs Mondays and Thursdays at 16:00 -05:00 (converted to UTC)
+    - cron: '0 21 * * 1,4'
+  workflow_dispatch: {}
+
+jobs:
+  update-catalog:
+    name: Ejecutar actualización automática del catálogo
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Ejecutar script de actualización (PowerShell Core)
+        shell: pwsh
+        run: |
+          $path = Join-Path $env:GITHUB_WORKSPACE 'products.json'
+          if (-Not (Test-Path $path)) { Write-Output "products.json no existe, abortando."; exit 0 }
+
+          $json = Get-Content -Raw $path | ConvertFrom-Json
+          $changed = $false
+
+          foreach ($p in $json) {
+            if ($p.priceRule) {
+              $add = 0
+              if ($p.priceRule -match '\+([0-9]+)') { $add = [int]$matches[1] }
+              if ($p.sourcePrice -ne $null) { $new = [double]$p.sourcePrice + $add } else { $new = $p.price }
+              if ($p.priceRule -match 'decena') { $new = [math]::Ceiling($new / 10) * 10 } else { $new = [math]::Round($new, 2) }
+              if ($p.price -ne $new) { $p.price = $new; $changed = $true }
+            } elseif ($p.sourcePrice -ne $null -and ([double]$p.price -lt [double]$p.sourcePrice)) {
+              $new = [math]::Ceiling([double]$p.sourcePrice)
+              if ($p.price -ne $new) { $p.price = $new; $changed = $true }
+            }
+          }
+
+          if ($changed) {
+            $json | ConvertTo-Json -Depth 10 | Out-File -FilePath $path -Encoding utf8
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add products.json
+            git commit -m "Automated: aplicar reglas de precio al catálogo\n\nCo-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>" || Write-Output "No commit (posible falta de cambios)"
+            git push
+          } else {
+            Write-Output "No changes to apply."
+          }
