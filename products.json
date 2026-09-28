@@ -37,38 +37,21 @@
     "id": "agn-003",
     "source": "digitalpc",
     "category": "Laptops",
-    "title": "HP 15-FD0130WM Intel Core I3-N305 8GB RAM 256GB SSD 15.6\"",
-    "processor": "Intel Core I3-N305",
-    "processorFamily": "Core i3",
+    "title": "Lenovo V15 82YU00X4LM LENOVO V15 82YU00X4LM RYZEN 3-7320U 8gb RAM 256SSD 15.6″FHD 8GB RAM 512GB SSD 15.6\"",
+    "processor": "LENOVO V15 82YU00X4LM RYZEN 3-7320U 8gb RAM 256SSD 15.6″FHD",
+    "processorFamily": "Ryzen 3",
     "ram": "8GB RAM",
-    "storage": "256GB SSD",
+    "storage": "512GB SSD",
     "display": "15.6\"",
-    "secondary": "Windows 11 · Intel Core I3-N305 · 15.6\" · Perfil productivo",
-    "description": "Buena eleccion para estudio, oficina y productividad con imagen sobria y moderna.",
+    "secondary": "Windows 11 · LENOVO V15 82YU00X4LM RYZEN 3-7320U 8gb RAM 256SSD 15.6″FHD · 15.6\" · Perfil productivo",
+    "description": "Muy conveniente para quien busca movilidad, buena respuesta y almacenamiento solido.",
     "price": 570,
-    "originUrl": "https://digitalpcecuador.com/producto/hp-15-fd0130wm-intel-core-i3-n305-8gb-ram-256gb-ssd-15-6-w11/",
+    "originUrl": "https://digitalpcecuador.com/producto/lenovo-v15-82yu00x4lm-ryzen-3-7320u-8gb-ram-256ssd-15-6fhd/",
     "sourcePrice": 499.0,
-    "image": "assets/products/03-hp-15-fd0130wm-intel-core-i3-n305-8gb-ram-256gb-ssd-15-6.jpg"
+    "image": "assets/products/03-lenovo-v15-82yu00x4lm-lenovo-v15-82yu00x4lm-ryzen-3-7320u-8gb-ram-256s.jpg"
   },
   {
     "id": "agn-004",
-    "source": "digitalpc",
-    "category": "Laptops",
-    "title": "HP 15-FD0133WM Intel Core I3-N305 8GB RAM 256GB SSD 15.6\"",
-    "processor": "Intel Core I3-N305",
-    "processorFamily": "Core i3",
-    "ram": "8GB RAM",
-    "storage": "256GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Intel Core I3-N305 · 15.6\" · Perfil productivo",
-    "description": "Buena eleccion para estudio, oficina y productividad con imagen sobria y moderna.",
-    "price": 570,
-    "originUrl": "https://digitalpcecuador.com/producto/hp-15-fd0133wm-intel-core-i3-n305-8gb-ram-256gb-ssd-15-6-w11/",
-    "sourcePrice": 499.0,
-    "image": "assets/products/04-hp-15-fd0133wm-intel-core-i3-n305-8gb-ram-256gb-ssd-15-6.jpg"
-  },
-  {
-    "id": "agn-005",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Asus VIVIBOOK GO 15 E1504GA Intel Core I3-N305 8GB RAM 256GB SSD 15.6\"",
@@ -82,10 +65,10 @@
     "price": 620,
     "originUrl": "https://digitalpcecuador.com/producto/asus-vivibook-go-15-e1504ga-intel-core-i3-n305-8gb-ram-256gb-ssd-15-6-w11/",
     "sourcePrice": 545.0,
-    "image": "assets/products/05-asus-vivibook-go-15-e1504ga-intel-core-i3-n305-8gb-ram-256gb-ssd-15-6.jpg"
+    "image": "assets/products/04-asus-vivibook-go-15-e1504ga-intel-core-i3-n305-8gb-ram-256gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-006",
+    "id": "agn-005",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Asus VIVOBOOK GO 15 E1504FA AMD Ryzen 5-7520U 8GB RAM 512GB SSD 15.6\"",
@@ -99,10 +82,10 @@
     "price": 620,
     "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-go-15-e1504fa-amd-ryzen-5-7520u-8gb-ram-512gb-ssd-15-6-w11-3/",
     "sourcePrice": 545.0,
-    "image": "assets/products/06-asus-vivobook-go-15-e1504fa-amd-ryzen-5-7520u-8gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/05-asus-vivobook-go-15-e1504fa-amd-ryzen-5-7520u-8gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-007",
+    "id": "agn-006",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Asus VIVOBOOK 14 X1404VAP ASUS VIVOBOOK 14 X1404VAP Intel Core 5-120U 8gb RAM 256gb SSD 14″ W11 8GB RAM 256GB SSD 15.6\"",
@@ -116,10 +99,10 @@
     "price": 650,
     "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-14-x1404vap-intel-core-5-120u-8gb-ram-256gb-ssd-14-w11/",
     "sourcePrice": 575.0,
-    "image": "assets/products/07-asus-vivobook-14-x1404vap-asus-vivobook-14-x1404vap-intel-core-5-120u.jpg"
+    "image": "assets/products/06-asus-vivobook-14-x1404vap-asus-vivobook-14-x1404vap-intel-core-5-120u.jpg"
   },
   {
-    "id": "agn-008",
+    "id": "agn-007",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "HP 15-fc0256la AMD Ryzen 5-7520U 16GB RAM 512GB SSD 15.6\"",
@@ -133,27 +116,10 @@
     "price": 730,
     "originUrl": "https://digitalpcecuador.com/producto/hp-15-fc0256la-amd-ryzen-5-7520u-16gb-ram-512gb-ssd-15-6/",
     "sourcePrice": 655.0,
-    "image": "assets/products/08-hp-15-fc0256la-amd-ryzen-5-7520u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/07-hp-15-fc0256la-amd-ryzen-5-7520u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-009",
-    "source": "digitalpc",
-    "category": "Laptops",
-    "title": "Lenovo IDEAPAD 1 Intel Core I5-1335U 16GB RAM 256GB SSD 15.6\"",
-    "processor": "Intel Core I5-1335U",
-    "processorFamily": "Core i5",
-    "ram": "16GB RAM",
-    "storage": "256GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Intel Core I5-1335U · 15.6\" · Perfil productivo",
-    "description": "Sube de nivel con un rendimiento mas solido para oficina, estudio y multitarea real.",
-    "price": 750,
-    "originUrl": "https://digitalpcecuador.com/producto/lenovo-ideapad-1-intel-core-i5-1335u-16gb-ram-256gb-ssd-15-6-w11/",
-    "sourcePrice": 675.0,
-    "image": "assets/products/09-lenovo-ideapad-1-intel-core-i5-1335u-16gb-ram-256gb-ssd-15-6.jpg"
-  },
-  {
-    "id": "agn-010",
+    "id": "agn-008",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Asus VIVOBOOK GO 15 E1504FA ASUS VIVOBOOK GO 15 E1504FA RYZEN 5-40 16GB 512SSD 15 16GB RAM 512GB SSD 15.6\"",
@@ -167,10 +133,10 @@
     "price": 750,
     "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-go-15-e1504fa-ryzen-5-4016gb512ssd156fhd/",
     "sourcePrice": 675.0,
-    "image": "assets/products/10-asus-vivobook-go-15-e1504fa-asus-vivobook-go-15-e1504fa-ryzen-5-40-16g.jpg"
+    "image": "assets/products/08-asus-vivobook-go-15-e1504fa-asus-vivobook-go-15-e1504fa-ryzen-5-40-16g.jpg"
   },
   {
-    "id": "agn-011",
+    "id": "agn-009",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "HP 250R G10 HP 250R G10 Intel Core 5-120U 16gb RAM 512gb SSD 15.6″ 16GB RAM 512GB SSD 15.6\"",
@@ -184,10 +150,10 @@
     "price": 750,
     "originUrl": "https://digitalpcecuador.com/producto/hp-250r-g10-intel-core-i5-120u-16gb-ram-512gb-ssd-15-6/",
     "sourcePrice": 675.0,
-    "image": "assets/products/11-hp-250r-g10-hp-250r-g10-intel-core-5-120u-16gb-ram-512gb-ssd-15-6-16gb.jpg"
+    "image": "assets/products/09-hp-250r-g10-hp-250r-g10-intel-core-5-120u-16gb-ram-512gb-ssd-15-6-16gb.jpg"
   },
   {
-    "id": "agn-012",
+    "id": "agn-010",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "HP OMNIBOOK 3 16 AMD Ryzen 5 40 16GB RAM 256GB SSD 15.6\"",
@@ -201,10 +167,10 @@
     "price": 770,
     "originUrl": "https://digitalpcecuador.com/producto/hp-omnibook-3-16-amd-ryzen-5-40-apu-16gb-ram-256g-ssd-16-2k-ips-touch-w11/",
     "sourcePrice": 695.0,
-    "image": "assets/products/12-hp-omnibook-3-16-amd-ryzen-5-40-16gb-ram-256gb-ssd-15-6.jpg"
+    "image": "assets/products/10-hp-omnibook-3-16-amd-ryzen-5-40-16gb-ram-256gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-013",
+    "id": "agn-011",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Asus VIVOBOOK 15 F1504VA ASUS VIVOBOOK 15 F1504VA CORE I5-1334U 8gb RAM 512gb SSD 15.6″ FHD W11 8GB RAM 512GB SSD 15.6\"",
@@ -218,27 +184,10 @@
     "price": 770,
     "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-go-15-e1504va-core-i5-1334u-8gb-ram-512gb-ssd-15-6-fhd-w11/",
     "sourcePrice": 695.0,
-    "image": "assets/products/13-asus-vivobook-15-f1504va-asus-vivobook-15-f1504va-core-i5-1334u-8gb-ra.jpg"
+    "image": "assets/products/11-asus-vivobook-15-f1504va-asus-vivobook-15-f1504va-core-i5-1334u-8gb-ra.jpg"
   },
   {
-    "id": "agn-014",
-    "source": "digitalpc",
-    "category": "Laptops",
-    "title": "Lenovo V15 G4 Intel Core I5-13420H 16GB RAM 512GB SSD 15.6\"",
-    "processor": "Intel Core I5-13420H",
-    "processorFamily": "Core i5",
-    "ram": "16GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Intel Core I5-13420H · 15.6\" · Perfil productivo",
-    "description": "Sube de nivel con un rendimiento mas solido para oficina, estudio y multitarea real.",
-    "price": 800,
-    "originUrl": "https://digitalpcecuador.com/producto/lenovo-v15-g4-intel-core-i5-13420h-16gb-ram-512gb-ssd-15-6/",
-    "sourcePrice": 725.0,
-    "image": "assets/products/14-lenovo-v15-g4-intel-core-i5-13420h-16gb-ram-512gb-ssd-15-6.jpg"
-  },
-  {
-    "id": "agn-015",
+    "id": "agn-012",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "HP 15-FD0260LA I5-1334U HP 15-FD0260LA I5-1334U 16GB 512SSD 15.6´´FHD-60GHZ 16GB RAM 512GB SSD 15.6\"",
@@ -252,27 +201,10 @@
     "price": 800,
     "originUrl": "https://digitalpcecuador.com/producto/hp-15-fd0260la-i5-1334u16gb512ssd15-6-fhd-60ghz/",
     "sourcePrice": 725.0,
-    "image": "assets/products/15-hp-15-fd0260la-i5-1334u-hp-15-fd0260la-i5-1334u-16gb-512ssd-15-6-fhd-6.jpg"
+    "image": "assets/products/12-hp-15-fd0260la-i5-1334u-hp-15-fd0260la-i5-1334u-16gb-512ssd-15-6-fhd-6.jpg"
   },
   {
-    "id": "agn-016",
-    "source": "digitalpc",
-    "category": "Laptops",
-    "title": "Lenovo IDEAPAD 1 Intel Core I5-1335U 16GB RAM 512GB SSD 15.6\"",
-    "processor": "Intel Core I5-1335U",
-    "processorFamily": "Core i5",
-    "ram": "16GB RAM",
-    "storage": "512GB SSD",
-    "display": "15.6\"",
-    "secondary": "Windows 11 · Intel Core I5-1335U · 15.6\" · Perfil productivo",
-    "description": "Sube de nivel con un rendimiento mas solido para oficina, estudio y multitarea real.",
-    "price": 810,
-    "originUrl": "https://digitalpcecuador.com/producto/lenovo-ideapad-1-intel-core-i5-1335u-16gb-ram-512gb-ssd-15-6-w11/",
-    "sourcePrice": 735.0,
-    "image": "assets/products/16-lenovo-ideapad-1-intel-core-i5-1335u-16gb-ram-512gb-ssd-15-6.jpg"
-  },
-  {
-    "id": "agn-017",
+    "id": "agn-013",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "HP 15-fc0275la AMD Ryzen 7-7730U 16GB RAM 512GB SSD 15.6\"",
@@ -286,10 +218,10 @@
     "price": 820,
     "originUrl": "https://digitalpcecuador.com/producto/hp-15-fc0275la-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6/",
     "sourcePrice": 745.0,
-    "image": "assets/products/17-hp-15-fc0275la-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/13-hp-15-fc0275la-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-018",
+    "id": "agn-014",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "Lenovo V15 G5 Intel Core I5-13420H 16GB RAM 512GB SSD 15.6\"",
@@ -303,10 +235,10 @@
     "price": 820,
     "originUrl": "https://digitalpcecuador.com/producto/lenovo-v15-g5-intel-core-i5-13420h-16gb-ram-512gb-ssd-15-6/",
     "sourcePrice": 745.0,
-    "image": "assets/products/18-lenovo-v15-g5-intel-core-i5-13420h-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/14-lenovo-v15-g5-intel-core-i5-13420h-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-019",
+    "id": "agn-015",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "DELL INSPIRON DC15250 Intel Core I5-1334U 16GB RAM 512GB SSD 15.6\"",
@@ -320,10 +252,10 @@
     "price": 820,
     "originUrl": "https://digitalpcecuador.com/producto/dell-inspiron-dc15250-intel-core-i5-1334u-8gb-ram-512gb-ssd-15-6-touch-w11/",
     "sourcePrice": 745.0,
-    "image": "assets/products/19-dell-inspiron-dc15250-intel-core-i5-1334u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/15-dell-inspiron-dc15250-intel-core-i5-1334u-16gb-ram-512gb-ssd-15-6.jpg"
   },
   {
-    "id": "agn-020",
+    "id": "agn-016",
     "source": "digitalpc",
     "category": "Laptops",
     "title": "DELL INSPIRON DC15250 Intel Core I5-1334U 16GB RAM 512GB SSD 15.6\"",
@@ -337,7 +269,75 @@
     "price": 820,
     "originUrl": "https://digitalpcecuador.com/producto/dell-inspiron-dc15250-intel-core-i5-1334u-16gb-ram-512gb-ssd-15-6-w11/",
     "sourcePrice": 745.0,
-    "image": "assets/products/20-dell-inspiron-dc15250-intel-core-i5-1334u-16gb-ram-512gb-ssd-15-6.jpg"
+    "image": "assets/products/16-dell-inspiron-dc15250-intel-core-i5-1334u-16gb-ram-512gb-ssd-15-6.jpg"
+  },
+  {
+    "id": "agn-017",
+    "source": "digitalpc",
+    "category": "Laptops",
+    "title": "DELL 15 DC15255 AMD Ryzen 7-7730U 16GB RAM 512GB SSD 15.6\"",
+    "processor": "AMD Ryzen 7-7730U",
+    "processorFamily": "Ryzen 7",
+    "ram": "16GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · AMD Ryzen 7-7730U · 15.6\" · Chip Ryzen 7",
+    "description": "Excelente para productividad exigente con una configuracion actual y muy competitiva.",
+    "price": 820,
+    "originUrl": "https://digitalpcecuador.com/producto/dell-15-dc15255-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6-fhd-touch-w11/",
+    "sourcePrice": 745.0,
+    "image": "assets/products/17-dell-15-dc15255-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6.jpg"
+  },
+  {
+    "id": "agn-018",
+    "source": "digitalpc",
+    "category": "Laptops",
+    "title": "HP 15-FC0372LA AMD Ryzen 7-7730U 16GB RAM 512GB SSD 15.6\"",
+    "processor": "AMD Ryzen 7-7730U",
+    "processorFamily": "Ryzen 7",
+    "ram": "16GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · AMD Ryzen 7-7730U · 15.6\" · Chip Ryzen 7",
+    "description": "Excelente para productividad exigente con una configuracion actual y muy competitiva.",
+    "price": 820,
+    "originUrl": "https://digitalpcecuador.com/producto/hp-15-fc0372la-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6/",
+    "sourcePrice": 745.0,
+    "image": "assets/products/18-hp-15-fc0372la-amd-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6.jpg"
+  },
+  {
+    "id": "agn-019",
+    "source": "digitalpc",
+    "category": "Laptops",
+    "title": "ACER ASPIRE GO AG15-42P-R917 Ryzen 7-7730U 16GB RAM 512GB SSD 15.6\"",
+    "processor": "Ryzen 7-7730U",
+    "processorFamily": "Ryzen 7",
+    "ram": "16GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · Ryzen 7-7730U · 15.6\" · Chip Ryzen 7",
+    "description": "Excelente para productividad exigente con una configuracion actual y muy competitiva.",
+    "price": 820,
+    "originUrl": "https://digitalpcecuador.com/producto/acer-aspire-go-ag15-42p-r917-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6-fhd-w11/",
+    "sourcePrice": 745.0,
+    "image": "assets/products/19-acer-aspire-go-ag15-42p-r917-ryzen-7-7730u-16gb-ram-512gb-ssd-15-6.jpg"
+  },
+  {
+    "id": "agn-020",
+    "source": "digitalpc",
+    "category": "Laptops",
+    "title": "Asus VIVOBOOK 15 F1504VAP ASUS VIVOBOOK 15 F1504VAP Intel Core 5 120U 16gb RAM 512gb SSD 15.6” W11 16GB RAM 512GB SSD 15.6\"",
+    "processor": "ASUS VIVOBOOK 15 F1504VAP Intel Core 5 120U 16gb RAM 512gb SSD 15.6” W11",
+    "processorFamily": "Otros",
+    "ram": "16GB RAM",
+    "storage": "512GB SSD",
+    "display": "15.6\"",
+    "secondary": "Windows 11 · ASUS VIVOBOOK 15 F1504VAP Intel Core 5 120U 16gb RAM 512gb SSD 15.6” W11 · 15.6\" · Perfil productivo",
+    "description": "Equipo confiable para avanzar con trabajo, estudio y productividad diaria.",
+    "price": 830,
+    "originUrl": "https://digitalpcecuador.com/producto/asus-vivobook-15-f1504vap-intel-core-5-120u-16gb-ram-512gb-ssd-15-6-w11/",
+    "sourcePrice": 755.0,
+    "image": "assets/products/20-asus-vivobook-15-f1504vap-asus-vivobook-15-f1504vap-intel-core-5-120u.jpg"
   },
   {
     "id": "ali-proj-001",
